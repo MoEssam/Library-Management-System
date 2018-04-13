@@ -74,8 +74,6 @@ public class Librarian {
         this.HomeAddress = HomeAddress;
     }
     
-    
-    
     Connection connection;
     public Librarian(){
         try{
@@ -93,17 +91,17 @@ public class Librarian {
         
         return this.connection != null;
     }
-    public boolean isLogin(String user,String pass)throws Exception{
+    public boolean isLogin(String LoginID,String Password)throws Exception{
         PreparedStatement pr= null;
         ResultSet rs= null;
-        String sql = "SELECT * FROM Admins where username = ? and password = ?";
+        String sql = "SELECT * FROM Librarian where username = ? and password = ?";
         
         try{
             pr=connection.prepareStatement(sql);
-            pr.setString(1,user);
-            pr.setString(2, pass);
+            pr.setString(1,LoginID);
+            pr.setString(2, Password);
             rs = pr.executeQuery();      
-        }
+       }
         catch (SQLException ex){
             return false;
         }  
