@@ -12,8 +12,9 @@
       <Label layoutX="88.0" layoutY="134.0" text="password" />
       <TextField fx:id="username" layoutX="210.0" layoutY="89.0" promptText="username" />
       <PasswordField fx:id="password" layoutX="210.0" layoutY="139.0" promptText="password" />
-      <Button fx:id="login" layoutX="232.0" layoutY="225.0" mnemonicParsing="false" onAction="#handleButtonAction" text="Login" />
+      <Button fx:id="loginButton" layoutX="232.0" layoutY="225.0" mnemonicParsing="false" onAction="#LibrarianLogin" text="Login" />
       <Label fx:id="status" layoutX="74.0" layoutY="31.0" text="Status" />
       <Label fx:id="connection" layoutX="241.0" layoutY="31.0" />
+      <Label fx:id="loginStatus" layoutX="88.0" layoutY="229.0" />
    </children>
 </AnchorPane>
