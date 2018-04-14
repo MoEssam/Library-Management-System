@@ -29,23 +29,26 @@ public class LoginController implements Initializable{
     @FXML
     private Label status;
     @FXML
-    private Label connection; 
-    @FXML
-    private Label loginStatus;
+    
+    
+    private Label loginStatus; 
     
     
     @FXML
     public void LibrarianLogin(ActionEvent event){
         try{
             
-            if(this.l1.isLogin(this.username.getText(), this.password.getText())){
+            if(l1.isLogin(username.getText(),password.getText())){
                 Stage stage = (Stage) this.loginButton.getScene().getWindow();
                 stage.close();
                 adminLogin();
             }
+            else{
+                loginStatus.setText("Invalid");
+            }
         }
         catch(Exception locaException){
-            
+            locaException.printStackTrace();
         }
             
         } 
@@ -66,15 +69,15 @@ public class LoginController implements Initializable{
          e.printStackTrace();
      }
     }
-      @Override
-      public void initialize(URL location, ResourceBundle resources) {
-          if(this.l1.isDatabaseConnected()){
-              this.status.setText("Connected to Database");
-          }
-          else{
-              this.status.setText("Not Connected");
-          }
+    @Override
+    public void initialize(URL location, ResourceBundle resources) {
+        if(this.l1.isDatabaseConnected()){
+            this.status.setText("Connected to Database");
+        }
+        else{
+            this.status.setText("Not Connected");
+        }
     }
-      
+    
     
 }

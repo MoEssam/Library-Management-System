@@ -92,9 +92,9 @@ public class Librarian {
         return this.connection != null;
     }
     public boolean isLogin(String username,String id)throws Exception{
-        PreparedStatement pr= null;
-        ResultSet rs= null;
-        String sql = "SELECT * FROM Librarian where username = ? and password = ?";
+        PreparedStatement pr;//= null;
+        ResultSet rs;//= null;
+        String sql = "SELECT * FROM librarian where username = ? and password = ?";
         
         try{
             pr=connection.prepareStatement(sql);
@@ -105,12 +105,12 @@ public class Librarian {
         catch (SQLException ex){
             return false;
         }  
-        finally{
+        /*finally{
             {
                 pr.close();
                 rs.close();
                 }
-                }
+                }*/
         return false;
     }
 }

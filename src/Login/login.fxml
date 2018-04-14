@@ -14,7 +14,7 @@
       <PasswordField fx:id="password" layoutX="210.0" layoutY="139.0" promptText="password" />
       <Button fx:id="loginButton" layoutX="232.0" layoutY="225.0" mnemonicParsing="false" onAction="#LibrarianLogin" text="Login" />
       <Label fx:id="status" layoutX="74.0" layoutY="31.0" text="Status" />
-      <Label fx:id="connection" layoutX="241.0" layoutY="31.0" />
+      <Label layoutX="241.0" layoutY="31.0" />
       <Label fx:id="loginStatus" layoutX="88.0" layoutY="229.0" />
    </children>
 </AnchorPane>
