@@ -30,8 +30,8 @@ public class LoginController implements Initializable{
     private Label status;
     @FXML
     
-    
     private Label loginStatus; 
+
     
     
     @FXML
@@ -39,6 +39,7 @@ public class LoginController implements Initializable{
         try{
             
             if(l1.isLogin(username.getText(),password.getText())){
+            
                 Stage stage = (Stage) this.loginButton.getScene().getWindow();
                 stage.close();
                 adminLogin();

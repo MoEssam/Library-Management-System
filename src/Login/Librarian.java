@@ -25,6 +25,11 @@ public class Librarian {
         this.EmailAddress = EmailAddress;
         this.HomeAddress = HomeAddress;
     }
+    public Librarian (String LoginID, String Password){
+        this.LoginID = LoginID;
+        this.Password = Password;
+    }
+    
     public String getFirstName() {
         return FirstName;
     }
@@ -91,27 +96,26 @@ public class Librarian {
         
         return this.connection != null;
     }
-    public boolean isLogin(String username,String id)throws Exception{
-        PreparedStatement pr;//= null;
-        ResultSet rs;//= null;
-        String sql = "SELECT * FROM librarian where username = ? and password = ?";
+    public boolean isLogin(String id,String pass)throws SQLException{
+        PreparedStatement pr ;//= null;
+        ResultSet rs ;
+        String query = "SELECT * FROM librarian where username = ? and password = ?";
         
         try{
-            pr=connection.prepareStatement(sql);
-            pr.setString(1,username);
-            pr.setString(2, id);
-            rs = pr.executeQuery();      
+            pr=connection.prepareStatement(query);
+            pr.setString(1,id);
+            pr.setString(2, pass);
+            rs = pr.executeQuery(); 
+            if(rs.next()){
+                return true;
+            }
+            else{
+                return false;
+            }
        }
-        catch (SQLException ex){
+        catch (Exception e){
             return false;
         }  
-        /*finally{
-            {
-                pr.close();
-                rs.close();
-                }
-                }*/
-        return false;
     }
 }
 
