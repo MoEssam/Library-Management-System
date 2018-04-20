@@ -97,7 +97,7 @@ public class Librarian {
         return this.connection != null;
     }
     public boolean isLogin(String id,String pass)throws SQLException{
-        PreparedStatement pr ;//= null;
+        PreparedStatement pr ;
         ResultSet rs ;
         String query = "SELECT * FROM librarian where username = ? and password = ?";
         
@@ -106,14 +106,9 @@ public class Librarian {
             pr.setString(1,id);
             pr.setString(2, pass);
             rs = pr.executeQuery(); 
-            if(rs.next()){
-                return true;
-            }
-            else{
-                return false;
-            }
+            return rs.next();
        }
-        catch (Exception e){
+        catch (SQLException e){
             return false;
         }  
     }
