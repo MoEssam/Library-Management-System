@@ -31,26 +31,26 @@ public class LoginController implements Initializable {
  
     @Override
     public void initialize(URL url, ResourceBundle rb) {
+        
+        
 
     }    
 
     @FXML
-    private void LibrarianLogin(ActionEvent event) throws SQLException {
+    private void LibrarianLogin(ActionEvent event) throws SQLException, IOException {
         
         if(l1.isLogin(username.getText(),password.getText())){
             
-                Stage stage = (Stage) this.Loginbutton.getScene().getWindow();
+                Stage stage = (Stage) Loginbutton.getScene().getWindow();
                 stage.close();
                 adminLogin();
-    }
-        
-        
+    }        
     }
 
     @FXML
     private void handleCancelBtnAction(ActionEvent event) {
     }
-     public void adminLogin()
+     public void adminLogin() throws IOException
     {
      try{
          Stage adminstage = new Stage();
@@ -64,6 +64,10 @@ public class LoginController implements Initializable {
          
      }
      catch (IOException e){
+         
      }
+    
+   
+    
 }
 }
