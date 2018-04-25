@@ -1,20 +1,25 @@
 package Librarian;
 
+import Book.AddBookController;
 import com.jfoenix.controls.JFXTextField;
 import com.jfoenix.controls.JFXButton;
+import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
+import javafx.scene.Scene;
 import javafx.scene.control.Tab;
+import javafx.scene.layout.Pane;
 import javafx.scene.text.Text;
+import javafx.stage.Stage;
 
 
 public class AdminController implements Initializable {
 
-    //@FXML
-    //private Tab bookissue;
+
     @FXML
     private JFXTextField enterbookid;
     @FXML
@@ -29,8 +34,6 @@ public class AdminController implements Initializable {
     private Text contact;
     @FXML
     private JFXButton issue;
-    //@FXML
-    //private Tab renew;
     @FXML
     private JFXTextField bookId;
     @FXML
@@ -70,7 +73,15 @@ public class AdminController implements Initializable {
     }
 
     @FXML
-    private void handleAddBookBtnAction(ActionEvent event) {
+    private void handleAddBookBtnAction(ActionEvent event) throws IOException {
+         Stage addbookstage = new Stage();
+         FXMLLoader addbookLoader = new FXMLLoader();
+         Pane bookroot = (Pane)addbookLoader.load(getClass().getResource("/Book/AddBook.fxml").openStream());
+         AddBookController add = (AddBookController)addbookLoader.getController();
+         Scene scene =new Scene(bookroot);
+         addbookstage.setScene(scene);
+         addbookstage.setTitle("Add Book");
+         addbookstage.show();
     }
 
     @FXML
