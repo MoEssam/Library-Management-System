@@ -35,7 +35,6 @@ public class LoginController implements Initializable {
         
 
     }    
-
     @FXML
     private void LibrarianLogin(ActionEvent event) throws SQLException, IOException {
         
@@ -49,6 +48,7 @@ public class LoginController implements Initializable {
 
     @FXML
     private void handleCancelBtnAction(ActionEvent event) {
+        System.exit(1);
     }
      public void adminLogin() throws IOException
     {
@@ -64,7 +64,7 @@ public class LoginController implements Initializable {
          
      }
      catch (IOException e){
-         
+         e.printStackTrace();
      }
     
    
