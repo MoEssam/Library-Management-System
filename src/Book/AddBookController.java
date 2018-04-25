@@ -36,11 +36,16 @@ public class AddBookController implements Initializable {
 
     @FXML
     private void handleSaveBtnAction(ActionEvent event) throws SQLException {
-        String sqlInsrt="INSERT INTO Book(title,id,author,publisher) VALUES(?,?,?,?)";
+        String sqlInsrt="INSERT INTO book(title,id,author) VALUES(?,?,?)";
         try{
             Connection conn = dbConnection.getConnection();
             PreparedStatement stmt= conn.prepareStatement(sqlInsrt);
-            //stmt.setString(1,);
+            stmt.setString(1,this.tittle.getText());
+            stmt.setString(2,this.id.getText());
+            stmt.setString(3,this.author.getText());
+            stmt.execute();
+            conn.close();
+            
         }
         catch(SQLException e){
             e.printStackTrace();

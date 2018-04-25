@@ -97,20 +97,34 @@ public class Librarian {
         return this.connection != null;
     }
     public boolean isLogin(String LoginID,String Password)throws SQLException{
-        PreparedStatement pr ;
-        ResultSet rs ;
+        PreparedStatement pr =null;
+        ResultSet rs =null;
         String query = "SELECT * FROM librarian where username = ? and password = ?";
         
         try{
-            pr=connection.prepareStatement(query);
+             
+            pr=this.connection.prepareStatement(query);
             pr.setString(1,LoginID );
             pr.setString(2, Password);
             rs = pr.executeQuery(); 
-            return rs.next();
+            boolean bol1;
+            if (rs.next()){
+                return true;
+            }
+            return false;
+            //return rs.next();
+            //conn.close();
+            
        }
         catch (SQLException e){
             return false;
         }  
+        finally{
+            {
+                pr.close();
+                rs.close();
+            }
+        }
     }
 }
 

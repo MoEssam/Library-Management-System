@@ -10,6 +10,7 @@ public class dbConnection {
         try {
             Class.forName("org.sqlite.JDBC");
             Connection conn= DriverManager.getConnection("jdbc:sqlite:Library.sqlite");
+            //conn.close();
             //Connection conn= DriverManager.getConnection("jdbc:sqlite:C:\\Users\\Mohamed Essam\\Desktop\\Library Management System\\LibraryManagementSystem\\src\\Library.sqlite");
             return conn;
             //C:\Users\Mohamed Essam\Desktop\Library Management System\LibraryManagementSystem\src\Library.sqlite
