@@ -1,39 +1,29 @@
 package Book;
 
+import Database.dbConnection;
+import java.sql.Connection;
+import java.sql.PreparedStatement;
+import java.sql.SQLException;
+
+
+
 
 public class Book {
-    private String Tittle;
+    private String Title;
     private String Author;
     private String SubjectArea;
     private String ISBN_Number;
     private String DateAdded;
     private String NumberOfCopies;
 
-    public Book() 
-    {
+    public String getTitle() {
+        return Title;
     }
-    
-    public Book(String Tittle, String Author, String SubjectArea,String ISBN_Number, String DateAdded, String NumberOfCopies  )
-    {
-        this.Tittle=Tittle;
-        this.Author=Author;
-        this.DateAdded=DateAdded;
-        this.ISBN_Number=ISBN_Number;
-        this.NumberOfCopies=NumberOfCopies;
-        this.SubjectArea=SubjectArea;
+
+    public void setTitle(String Title) {
+        this.Title = Title;
     }
-    
-    public String getTittle()
-    {
-        return Tittle;
-    }
-    
-    public void setTittle(String Tittle)
-    {
-        this.Tittle=Tittle;
-    }
-    
-  
+
     public String getAuthor() {
         return Author;
     }
@@ -73,6 +63,9 @@ public class Book {
     public void setNumberOfCopies(String NumberOfCopies) {
         this.NumberOfCopies = NumberOfCopies;
     }
+
+    
+   
     
     /*public String AddToCatalogue()
     {
@@ -87,17 +80,32 @@ public class Book {
     public boolean isAvailable()
     {
         
-    }
+    }*/
     
-    public String Update()
+    public String Update(String title,String id,String author)
     {
-        
+         String sqlInsrt="INSERT INTO book(title,id,author) VALUES(?,?,?)";
+        try{
+            Connection conn = dbConnection.getConnection();
+            PreparedStatement stmt= conn.prepareStatement(sqlInsrt);
+            stmt.setString(1,title);
+            stmt.setString(2,id);
+            stmt.setString(3,author);
+            stmt.execute();
+            conn.close();
+            
+        }
+        catch(SQLException e){
+            e.printStackTrace();
+        }
+        return null;
     }
+}
     
-   public String removeBook()
+   /*public String removeBook()
    {
        
    }*/
-}
+
 
     

@@ -14,9 +14,11 @@ import javafx.fxml.Initializable;
 
 
 public class AddBookController implements Initializable {
-
+    Book b1=new Book();
+    
+   
     @FXML
-    private JFXTextField tittle;
+    private JFXTextField title;
     @FXML
     private JFXTextField id;
     @FXML
@@ -28,28 +30,13 @@ public class AddBookController implements Initializable {
     @FXML
     private JFXButton cancel;
 
-  
     @Override
     public void initialize(URL url, ResourceBundle rb) {
         
     }    
-
     @FXML
-    private void handleSaveBtnAction(ActionEvent event) throws SQLException {
-        String sqlInsrt="INSERT INTO book(title,id,author) VALUES(?,?,?)";
-        try{
-            Connection conn = dbConnection.getConnection();
-            PreparedStatement stmt= conn.prepareStatement(sqlInsrt);
-            stmt.setString(1,this.tittle.getText());
-            stmt.setString(2,this.id.getText());
-            stmt.setString(3,this.author.getText());
-            stmt.execute();
-            conn.close();
-            
-        }
-        catch(SQLException e){
-            e.printStackTrace();
-        }
+    private void handleSaveBtnAction(ActionEvent event) throws SQLException {   
+        b1.Update(title.getText(),id.getText(),author.getText());
     }
 
     @FXML
