@@ -1,10 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import com.jfoenix.controls.*?>
-<?import java.lang.*?>
-<?import javafx.scene.control.*?>
-<?import javafx.scene.layout.*?>
-<?import javafx.scene.text.*?>
 <?import com.jfoenix.controls.JFXButton?>
 <?import com.jfoenix.controls.JFXPasswordField?>
 <?import com.jfoenix.controls.JFXTextField?>
@@ -12,7 +7,7 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane id="AnchorPane" prefHeight="310.0" prefWidth="0.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Login.LoginController">
+<AnchorPane id="AnchorPane" prefHeight="310.0" prefWidth="0.0" xmlns="http://javafx.com/javafx/8.0.141" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Login.LoginController">
    <children>
       <Label alignment="CENTER" prefHeight="52.0" prefWidth="320.0" style="-fx-background-color: black; -fx-text-fill: white;" text="Library Login" textAlignment="CENTER" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
          <font>
@@ -29,12 +24,12 @@
             <Font size="16.0" />
          </font>
       </JFXPasswordField>
-      <JFXButton fx:id="Loginbutton" layoutX="59.0" layoutY="200.0" onAction="#LibrarianLogin" prefHeight="52.0" prefWidth="97.0" style="-fx-background-color: blue;" text="Login">
+      <JFXButton fx:id="Loginbutton" layoutX="59.0" layoutY="200.0" onAction="#LibrarianLogin" prefHeight="52.0" prefWidth="97.0" style="-fx-background-color: cyan;" text="Login">
          <font>
             <Font size="16.0" />
          </font>
       </JFXButton>
-      <JFXButton fx:id="CancelButton" layoutX="168.0" layoutY="200.0" onAction="#handleCancelBtnAction" prefHeight="52.0" prefWidth="97.0" style="-fx-background-color: blue;" text="Cancel">
+      <JFXButton fx:id="CancelButton" layoutX="168.0" layoutY="200.0" onAction="#handleCancelBtnAction" prefHeight="52.0" prefWidth="97.0" style="-fx-background-color: cyan;" text="Cancel">
          <font>
             <Font size="16.0" />
          </font>
