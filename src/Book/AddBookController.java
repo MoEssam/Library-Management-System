@@ -21,11 +21,15 @@ public class AddBookController implements Initializable {
     @FXML
     private JFXTextField author;
     @FXML
-    private JFXTextField publisher;
-    @FXML
     private JFXButton save;
     @FXML
     private JFXButton cancel;
+    @FXML
+    private JFXTextField subjarea;
+    @FXML
+    private JFXTextField dateadded;
+    @FXML
+    private JFXTextField noofcopies;
 
     @Override
     public void initialize(URL url, ResourceBundle rb) {
