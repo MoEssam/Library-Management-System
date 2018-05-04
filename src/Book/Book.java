@@ -15,6 +15,24 @@ public class Book {
     private String ISBN_Number;
     private String DateAdded;
     private String NumberOfCopies;
+    
+    
+    public Book()
+    {
+        
+    }
+
+    public Book(String Title, String Author, String SubjectArea, String ISBN_Number, String DateAdded, String NumberOfCopies) {
+        this.Title = Title;
+        this.Author = Author;
+        this.SubjectArea = SubjectArea;
+        this.ISBN_Number = ISBN_Number;
+        this.DateAdded = DateAdded;
+        this.NumberOfCopies = NumberOfCopies;
+    }
+    
+    
+    
 
     public String getTitle() {
         return Title;

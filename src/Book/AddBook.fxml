@@ -63,14 +63,20 @@
             </JFXTextField>
             <HBox prefHeight="76.0" prefWidth="528.0">
                <children>
-                  <JFXButton fx:id="cancel" layoutX="10.0" layoutY="10.0" onAction="#handleCancelBtnAction" prefHeight="72.0" prefWidth="282.0" ripplerFill="#415fa6" style="-fx-background-color: cyan;" text="Cancel">
+                  <JFXButton fx:id="cancel" buttonType="RAISED" layoutX="10.0" layoutY="10.0" onAction="#handleCancelBtnAction" prefHeight="72.0" prefWidth="282.0" ripplerFill="#415fa6" style="-fx-background-color: cyan;" text="Cancel">
                      <font>
                         <Font size="15.0" />
-                     </font></JFXButton>
+                     </font>
+                     <HBox.margin>
+                        <Insets right="20.0" />
+                     </HBox.margin></JFXButton>
                   <JFXButton fx:id="save" buttonType="RAISED" onAction="#handleSaveBtnAction" prefHeight="72.0" prefWidth="282.0" ripplerFill="#415fa6" style="-fx-background-color: cyan;" text="Save">
                      <font>
                         <Font size="15.0" />
                      </font>
+                     <HBox.margin>
+                        <Insets />
+                     </HBox.margin>
                   </JFXButton>
                </children>
             </HBox>

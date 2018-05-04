@@ -28,8 +28,6 @@ public class AddBookController implements Initializable {
     private JFXTextField subjarea;
     @FXML
     private JFXTextField dateadded;
-    @FXML
-    private JFXTextField noofcopies;
 
     @Override
     public void initialize(URL url, ResourceBundle rb) {

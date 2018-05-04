@@ -11,7 +11,10 @@ import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
 import javafx.scene.Scene;
+import javafx.scene.control.Label;
 import javafx.scene.control.Tab;
+import javafx.scene.image.Image;
+import javafx.scene.image.ImageView;
 import javafx.scene.layout.Pane;
 import javafx.scene.text.Text;
 import javafx.stage.Stage;
@@ -23,17 +26,7 @@ public class AdminController implements Initializable {
     @FXML
     private JFXTextField enterbookid;
     @FXML
-    private Text bookname;
-    @FXML
-    private Text author;
-    @FXML
     private JFXTextField entermemberid;
-    @FXML
-    private Text membername;
-    @FXML
-    private Text contact;
-    @FXML
-    private JFXButton issue;
     @FXML
     private JFXTextField bookId;
     @FXML
@@ -48,6 +41,29 @@ public class AdminController implements Initializable {
     private JFXButton viewbooks;
     @FXML
     private JFXButton settings;
+    //@FXML
+    //private Tab bookissue;
+    @FXML
+    private Label namebook;
+    @FXML
+    private Label authorname;
+    @FXML
+    private Label member_name;
+    @FXML
+    private Label contactnumber;
+    @FXML
+    private ImageView add_book_img;
+    @FXML
+    private ImageView view_mem_img;
+    @FXML
+    private ImageView catalogue_img;
+    @FXML
+    private ImageView issue_img;
+    @FXML
+    private ImageView add_member_img;
+    @FXML
+    private JFXButton renewbtn;
+
 
 
 
@@ -56,9 +72,6 @@ public class AdminController implements Initializable {
       
     }    
 
-    @FXML
-    private void handleIssueBtnAction(ActionEvent event) {
-    }
 
     @FXML
     private void handleRenewBtnAction(ActionEvent event) {
@@ -74,12 +87,18 @@ public class AdminController implements Initializable {
 
     @FXML
     private void handleAddBookBtnAction(ActionEvent event) throws IOException {
+           //ImageView iv = new ImageView(getClass().getResource("/images/useralt128.png").toExternalForm());
+         //ImageView iv1 = new ImageView(getClass().getResource("/images/addbooks.png").toExternalForm());
+         Image image =new Image("/images/useralt128.png");
+         add_member_img.setImage(image);
+         
          Stage addbookstage = new Stage();
          FXMLLoader addbookLoader = new FXMLLoader();
          Pane bookroot = (Pane)addbookLoader.load(getClass().getResource("/Book/AddBook.fxml").openStream());
          AddBookController add = (AddBookController)addbookLoader.getController();
          Scene scene =new Scene(bookroot);
          addbookstage.setScene(scene);
+         
          addbookstage.setTitle("Add Book");
          addbookstage.show();
     }
