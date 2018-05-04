@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import com.jfoenix.controls.JFXTextField?>
+<?import java.net.URL?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+
+<AnchorPane id="AnchorPane" prefHeight="400.0" prefWidth="600.0"  xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/9.0.1" fx:controller="Librarian.StudentsController">
+    
+   <children>
+      <VBox layoutX="79.0" layoutY="63.0" prefHeight="276.0" prefWidth="202.0">
+         <children>
+            <JFXTextField fx:id="studnetname" opacity="0.52" promptText="Student Name">
+               <VBox.margin>
+                  <Insets bottom="30.0" left="10.0" right="10.0" top="30.0" />
+               </VBox.margin>
+            </JFXTextField>
+            <JFXTextField fx:id="studentnumber" opacity="0.65" promptText="Student Number">
+               <VBox.margin>
+                  <Insets bottom="30.0" left="10.0" right="10.0" top="30.0" />
+               </VBox.margin>
+            </JFXTextField>
+            <HBox prefHeight="100.0" prefWidth="200.0">
+               <children>
+                  <JFXButton onAction="#handleSaveButton" prefHeight="164.0" prefWidth="109.0" text="Save" />
+                  <JFXButton onAction="#handleCancelButton" prefHeight="100.0" prefWidth="106.0" text="Cancel" />
+               </children>
+            </HBox>
+         </children>
+      </VBox>
+   </children>
+</AnchorPane>

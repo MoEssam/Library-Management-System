@@ -1,6 +1,8 @@
 package Librarian;
 
 import Book.AddBookController;
+
+
 import com.jfoenix.controls.JFXTextField;
 import com.jfoenix.controls.JFXButton;
 import java.io.IOException;
@@ -69,9 +71,43 @@ public class AdminController implements Initializable {
     }
 
     @FXML
-    private void handleAddMemBtnAction(ActionEvent event) {
+    private void handleAddMemBtnAction(ActionEvent event) throws IOException {
+        Stage MemStage=new Stage();
+            FXMLLoader memberLoader=new FXMLLoader();
+            Pane memberroot = (Pane)memberLoader.load(getClass().getResource("members.fxml").openStream());
+           MembersController memberController=(MembersController)memberLoader.getController();
+            Scene scene=new Scene(memberroot);
+            MemStage.setScene(scene);
+            MemStage.setTitle("Choose one Option only");
+            MemStage.show();
+         /*Stage stage = (Stage) addmember.getScene().getWindow();
+                stage.close();
+                differentMemsLogin();
+         */
+     
     }
-
+  /* public void differentMemsLogin()throws IOException
+    {
+        try{
+            Stage MemStage=new Stage();
+            FXMLLoader memberLoader=new FXMLLoader();
+            Pane memberroot = (Pane)memberLoader.load(getClass().getResource("/Librarian.choose/chooseTypeMember.fxml").openStream());
+            ChooseTypeMemberController memberController=(ChooseTypeMemberController)memberLoader.getController();
+            Scene scene=new Scene(memberroot);
+            MemStage.setScene(scene);
+            MemStage.setTitle("Choose one Option only");
+            MemStage.show();
+            
+            
+        }
+        catch(IOException e)
+        {
+            e.printStackTrace();
+        }
+            
+            
+    }
+*/
     @FXML
     private void handleAddBookBtnAction(ActionEvent event) throws IOException {
          Stage addbookstage = new Stage();
