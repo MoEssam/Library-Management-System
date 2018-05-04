@@ -5,9 +5,11 @@
  */
 package Librarian;
 
+import com.jfoenix.controls.JFXButton;
 import com.jfoenix.controls.JFXTextField;
 import java.net.URL;
 import java.util.ResourceBundle;
+import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 
@@ -34,6 +36,10 @@ public class MembersController implements Initializable {
     private JFXTextField contactnumber;
     @FXML
     private JFXTextField emailaddress;
+    @FXML
+    private JFXButton save;
+    @FXML
+    private JFXButton cancel;
 
     /**
      * Initializes the controller class.
@@ -42,5 +48,13 @@ public class MembersController implements Initializable {
     public void initialize(URL url, ResourceBundle rb) {
         // TO
     }    
+
+    @FXML
+    private void handleSaveBtnAction(ActionEvent event) {
+    }
+
+    @FXML
+    private void handleCancelBtnAction(ActionEvent event) {
+    }
     
 }
