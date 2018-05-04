@@ -10,8 +10,6 @@
 <?import javafx.scene.control.Tab?>
 <?import javafx.scene.control.TabPane?>
 <?import javafx.scene.effect.Blend?>
-<?import javafx.scene.image.Image?>
-<?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.BorderPane?>
 <?import javafx.scene.layout.HBox?>
@@ -49,55 +47,20 @@
                   <JFXButton fx:id="addmember" contentDisplay="TOP" onAction="#handleAddMemBtnAction" prefHeight="150.0" prefWidth="150.0" style="-fx-background-color: cyan;" text="Add Member">
                      <VBox.margin>
                         <Insets top="10.0" />
-                     </VBox.margin>
-                     <graphic>
-                        <ImageView fx:id="add_member_img" fitHeight="36.0" fitWidth="52.0" pickOnBounds="true" preserveRatio="true">
-                           <image>
-                              <Image url="@../images/useralt128.png" />
-                           </image>
-                        </ImageView>
-                     </graphic></JFXButton>
+                     </VBox.margin></JFXButton>
                   <JFXButton fx:id="addbook" contentDisplay="TOP" layoutX="10.0" layoutY="10.0" onAction="#handleAddBookBtnAction" prefHeight="150.0" prefWidth="150.0" style="-fx-background-color: cyan;" text="Add Book">
-                     <graphic>
-                        <ImageView fx:id="add_book_img" fitHeight="41.0" fitWidth="41.0" pickOnBounds="true" preserveRatio="true">
-                           <image>
-                              <Image url="@../images/book128.png" />
-                           </image>
-                        </ImageView>
-                     </graphic>
                      <VBox.margin>
                         <Insets top="10.0" />
                      </VBox.margin></JFXButton>
                   <JFXButton fx:id="viewmembers" contentDisplay="TOP" layoutX="10.0" layoutY="84.0" onAction="#handleViewMemBtnAction" prefHeight="150.0" prefWidth="150.0" style="-fx-background-color: cyan;" text="View Members">
-                     <graphic>
-                        <ImageView fx:id="view_mem_img" fitHeight="41.0" fitWidth="41.0" pickOnBounds="true" preserveRatio="true">
-                           <image>
-                              <Image url="@../images/Icon_GYB_Club.jpg" />
-                           </image>
-                        </ImageView>
-                     </graphic>
                      <VBox.margin>
                         <Insets top="10.0" />
                      </VBox.margin></JFXButton>
                   <JFXButton fx:id="viewbooks" contentDisplay="TOP" layoutX="10.0" layoutY="10.0" onAction="#handleViewBooksBtnAction" prefHeight="150.0" prefWidth="150.0" style="-fx-background-color: cyan;" text="Catalogue">
-                     <graphic>
-                        <ImageView fx:id="catalogue_img" fitHeight="41.0" fitWidth="41.0" pickOnBounds="true" preserveRatio="true">
-                           <image>
-                              <Image url="@../images/addbooks.png" />
-                           </image>
-                        </ImageView>
-                     </graphic>
                      <VBox.margin>
                         <Insets top="10.0" />
                      </VBox.margin></JFXButton>
                   <JFXButton fx:id="settings" contentDisplay="TOP" layoutX="10.0" layoutY="84.0" onAction="#handleSettingsBtnAction" prefHeight="150.0" prefWidth="150.0" style="-fx-background-color: cyan;" text="Issuable Book">
-                     <graphic>
-                        <ImageView fx:id="issue_img" fitHeight="41.0" fitWidth="41.0" pickOnBounds="true" preserveRatio="true">
-                           <image>
-                              <Image url="@../images/list%20members.png" />
-                           </image>
-                        </ImageView>
-                     </graphic>
                      <VBox.margin>
                         <Insets bottom="10.0" top="10.0" />
                      </VBox.margin></JFXButton>

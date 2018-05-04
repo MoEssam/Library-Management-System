@@ -85,10 +85,10 @@ public class AdminController implements Initializable {
 
     @FXML
     private void handleAddMemBtnAction(ActionEvent event) throws IOException {
-        Stage MemStage=new Stage();
+            Stage MemStage=new Stage();
             FXMLLoader memberLoader=new FXMLLoader();
             Pane memberroot = (Pane)memberLoader.load(getClass().getResource("members.fxml").openStream());
-           MembersController memberController=(MembersController)memberLoader.getController();
+            MembersController memberController=(MembersController)memberLoader.getController();
             Scene scene=new Scene(memberroot);
             MemStage.setScene(scene);
             MemStage.setTitle("Choose one Option only");
@@ -122,19 +122,13 @@ public class AdminController implements Initializable {
     }
 */
     @FXML
-    private void handleAddBookBtnAction(ActionEvent event) throws IOException {
-           //ImageView iv = new ImageView(getClass().getResource("/images/useralt128.png").toExternalForm());
-         //ImageView iv1 = new ImageView(getClass().getResource("/images/addbooks.png").toExternalForm());
-         Image image =new Image("/images/useralt128.png");
-         add_member_img.setImage(image);
-         
+    private void handleAddBookBtnAction(ActionEvent event) throws IOException {            
          Stage addbookstage = new Stage();
          FXMLLoader addbookLoader = new FXMLLoader();
          Pane bookroot = (Pane)addbookLoader.load(getClass().getResource("/Book/AddBook.fxml").openStream());
          AddBookController add = (AddBookController)addbookLoader.getController();
          Scene scene =new Scene(bookroot);
          addbookstage.setScene(scene);
-         
          addbookstage.setTitle("Add Book");
          addbookstage.show();
     }
