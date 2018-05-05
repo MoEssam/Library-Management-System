@@ -1,5 +1,10 @@
 package Librarian;
 
+import Database.dbConnection;
+import java.sql.Connection;
+import java.sql.PreparedStatement;
+import java.sql.SQLException;
+
 /*import Login.Librarian;*/
 
 public class MembersData  {
@@ -12,6 +17,8 @@ public class MembersData  {
     protected  String address;
     protected String contactnumber;
     protected String emailaddress;
+    public MembersData()
+    {}
 
     public MembersData(String firstname, String middleinitial, String lastname, String dateofbirth, String date_of_membership, String address, String contactnumber, String emailaddress) {
         this.firstname = firstname;
@@ -23,6 +30,7 @@ public class MembersData  {
         this.contactnumber = contactnumber;
         this.emailaddress = emailaddress;
     }
+
     
 
     public String getFirstname() {
@@ -85,6 +93,28 @@ public class MembersData  {
         this.emailaddress=emailaddress;
     }
     
-    
+    public String add_member(String firstname, String middleinitial, String lastname, String dateofbirth, String date_of_membership, String address, String contactnumber, String emailaddress)
+    {
+         String sqlInsrt="INSERT INTO members(firstname,middleinitial,lastname,dateofbirth,date_of_membership,address,contactnumber,emailaddress) VALUES(?,?,?,?,?,?,?,?)";
+        try{
+            Connection conn = dbConnection.getConnection();
+            PreparedStatement stmt= conn.prepareStatement(sqlInsrt);
+            stmt.setString(1,firstname);
+            stmt.setString(2,middleinitial);
+            stmt.setString(3,lastname);
+            stmt.setString(4,dateofbirth);
+            stmt.setString(5,date_of_membership);
+            stmt.setString(6,address);
+            stmt.setString(7,contactnumber);
+            stmt.setString(8,emailaddress);
+            stmt.execute();
+            conn.close();
+            
+        }
+        catch(SQLException e){
+            e.printStackTrace();
+        }
+        return null;
+    }
     
 }
