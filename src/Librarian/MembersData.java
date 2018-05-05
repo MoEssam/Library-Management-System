@@ -4,8 +4,6 @@ import Database.dbConnection;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.SQLException;
-import javafx.beans.property.StringProperty;
-import javafx.beans.property.SimpleStringProperty;
 
 /*import Login.Librarian;*/
 
