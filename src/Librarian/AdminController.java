@@ -138,13 +138,15 @@ public class AdminController implements Initializable {
     private void handleViewMemBtnAction(ActionEvent event) throws IOException {
          Stage viewmembersstage= new Stage();
         FXMLLoader viewmemberssLoader = new FXMLLoader();
-         Pane viewmember = (Pane)viewmemberssLoader.load(getClass().getResource("View Members.fxml").openStream());
-   
+         Pane viewmember = (Pane)viewmemberssLoader.load(getClass().getResource("ViewMembers.fxml").openStream());
          ViewMembersController add = (ViewMembersController)viewmemberssLoader.getController();
          Scene scene =new Scene(viewmember);
          viewmembersstage.setScene(scene);
          viewmembersstage.setTitle("View Members");
          viewmembersstage.show();
+         
+         
+         
     }
 
     @FXML
