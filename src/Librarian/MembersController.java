@@ -12,6 +12,7 @@ import java.util.ResourceBundle;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
+import javax.swing.JOptionPane;
 
 /**
  * FXML Controller class
@@ -19,7 +20,7 @@ import javafx.fxml.Initializable;
  * @author mahmoud
  */
 public class MembersController implements Initializable {
-
+    MembersData m1=new MembersData();
     @FXML
     private JFXTextField firstname;
     @FXML
@@ -51,10 +52,12 @@ public class MembersController implements Initializable {
 
     @FXML
     private void handleSaveBtnAction(ActionEvent event) {
+        m1.add_member(firstname.getText(), middlename.getText(), lastname.getText(), dateofbirth.getText(), dateofmemberShip.getText(), address.getText(), contactnumber.getText(), emailaddress.getText());
     }
 
     @FXML
     private void handleCancelBtnAction(ActionEvent event) {
+        
     }
     
 }
