@@ -9,7 +9,7 @@ import java.sql.SQLException;
 
 
 public class Book {
-    private String Title;
+    private  String Title;
     private String Author;
     private String SubjectArea;
     private String ISBN_Number;

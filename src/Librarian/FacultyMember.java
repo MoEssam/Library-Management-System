@@ -16,8 +16,9 @@ public class FacultyMember extends MembersData{
     
     
 
-    public FacultyMember(String firstname, String middleinitial, String lastname, String dateofbirth, String date_of_membership, String address, String contactnumber, String emailaddress) {
-        super(firstname, middleinitial, lastname, dateofbirth, date_of_membership, address, contactnumber, emailaddress);
+    public FacultyMember(String firstname,  String lastname, String dateofbirth, 
+            String date_of_membership, String address, String contactnumber, String emailaddress) {
+        super(firstname, lastname, dateofbirth, date_of_membership, address, contactnumber, emailaddress);
     }
 
     public String getCollegeName() {

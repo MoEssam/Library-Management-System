@@ -13,8 +13,9 @@ public class Student extends MembersData {
     String schoolname;
     String schoolnumber;
     
-    public Student(String firstname, String middleinitial, String lastname, String dateofbirth, String date_of_membership, String address, String contactnumber, String emailaddress) {
-        super(firstname, middleinitial, lastname, dateofbirth, date_of_membership, address, contactnumber, emailaddress);
+    public Student(String firstname, String lastname, String dateofbirth,
+            String date_of_membership, String address, String contactnumber, String emailaddress) {
+        super(firstname, lastname, dateofbirth, date_of_membership, address, contactnumber, emailaddress);
     }
 
     public String getSchoolname() {

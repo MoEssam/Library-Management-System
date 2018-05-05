@@ -8,12 +8,12 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane id="AnchorPane" prefHeight="525.0" prefWidth="563.0" styleClass="mainFxmlClass" xmlns="http://javafx.com/javafx/8.0.141" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Book.AddBookController">
+<AnchorPane id="AnchorPane" prefHeight="523.0" prefWidth="565.0" styleClass="mainFxmlClass" xmlns="http://javafx.com/javafx/8.0.141" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Book.AddBookController">
     
    <children>
       <VBox prefHeight="421.0" prefWidth="510.0" AnchorPane.bottomAnchor="-9.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
          <children>
-            <JFXTextField fx:id="title" focusColor="#414ba3" labelFloat="true" promptText="Book Tittle" style="-fx-background-color: white; -fx-text-fill: red;" unFocusColor="#4d4d4d">
+            <JFXTextField fx:id="title" focusColor="#414ba3" labelFloat="true" promptText="Book Tittle" style="-fx-text-fill: black;" unFocusColor="#4d4d4d">
                <VBox.margin>
                   <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
                </VBox.margin>
@@ -21,7 +21,7 @@
                   <Font size="14.0" />
                </font>
             </JFXTextField>
-            <JFXTextField fx:id="author" labelFloat="true" layoutX="20.0" layoutY="30.0" promptText="Book Author">
+            <JFXTextField fx:id="author" labelFloat="true" layoutX="20.0" layoutY="30.0" promptText="Book Author" style="-fx-text-fill: black;">
                <VBox.margin>
                   <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
                </VBox.margin>
@@ -29,7 +29,7 @@
                   <Font size="14.0" />
                </font>
             </JFXTextField>
-            <JFXTextField fx:id="subjarea" labelFloat="true" promptText="Subject Area">
+            <JFXTextField fx:id="subjarea" labelFloat="true" promptText="Subject Area" style="-fx-text-fill: black;">
                <VBox.margin>
                   <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
                </VBox.margin>
@@ -37,7 +37,7 @@
                   <Font size="14.0" />
                </font>
             </JFXTextField>
-            <JFXTextField fx:id="id" labelFloat="true" layoutX="20.0" layoutY="30.0" promptText="ISBN Number">
+            <JFXTextField fx:id="id" labelFloat="true" layoutX="20.0" layoutY="30.0" promptText="ISBN Number" style="-fx-text-fill: black;">
                <VBox.margin>
                   <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
                </VBox.margin>
@@ -45,7 +45,7 @@
                   <Font size="14.0" />
                </font>
             </JFXTextField>
-            <JFXTextField fx:id="dateadded" labelFloat="true" layoutX="10.0" layoutY="61.0" promptText="Date Added">
+            <JFXTextField fx:id="dateadded" labelFloat="true" layoutX="10.0" layoutY="61.0" promptText="Date Added" style="-fx-text-fill: black;">
                <VBox.margin>
                   <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
                </VBox.margin>
@@ -53,7 +53,7 @@
                   <Font size="14.0" />
                </font>
             </JFXTextField>
-            <JFXTextField labelFloat="true" promptText="Number Of Copies">
+            <JFXTextField labelFloat="true" promptText="Number Of Copies" style="-fx-text-fill: black;">
                <VBox.margin>
                   <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
                </VBox.margin>
@@ -63,7 +63,7 @@
             </JFXTextField>
             <HBox prefHeight="76.0" prefWidth="528.0">
                <children>
-                  <JFXButton fx:id="cancel" buttonType="RAISED" layoutX="10.0" layoutY="10.0" onAction="#handleCancelBtnAction" prefHeight="72.0" prefWidth="282.0" ripplerFill="#415fa6" style="-fx-background-color: cyan;" text="Cancel">
+                  <JFXButton fx:id="cancel" buttonType="RAISED" layoutX="10.0" layoutY="10.0" onAction="#handleCancelBtnAction" prefHeight="70.0" prefWidth="283.0" ripplerFill="#415fa6" style="-fx-background-color: cyan;" text="Cancel">
                      <font>
                         <Font size="15.0" />
                      </font>
