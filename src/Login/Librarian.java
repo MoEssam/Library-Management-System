@@ -82,20 +82,20 @@ public class Librarian {
     Connection connection;
     public Librarian(){
         try{
-            this.connection=dbConnection.getConnection();
+            connection=dbConnection.getConnection();
         }
         catch (SQLException ex){
             ex.printStackTrace();
         }
-        if(this.connection == null){
+        if(connection == null){
             System.exit(1);    
         }    
     }
 
-    public boolean isDatabaseConnected(){
+    /*public boolean isDatabaseConnected(){
         
         return this.connection != null;
-    }
+    }*/
     public boolean isLogin(String LoginID,String Password)throws SQLException{
         PreparedStatement pr =null;
         ResultSet rs =null;
@@ -103,7 +103,7 @@ public class Librarian {
         
         try{
              
-            pr=this.connection.prepareStatement(query);
+            pr=connection.prepareStatement(query);
             pr.setString(1,LoginID );
             pr.setString(2, Password);
             rs = pr.executeQuery(); 

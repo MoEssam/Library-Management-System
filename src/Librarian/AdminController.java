@@ -1,6 +1,7 @@
 package Librarian;
 
 import Book.AddBookController;
+import Book.IssuablebookController;
 import Book.ViewBookController;
 
 
@@ -157,7 +158,15 @@ public class AdminController implements Initializable {
     }
 
     @FXML
-    private void handleSettingsBtnAction(ActionEvent event) {
+    private void handleSettingsBtnAction(ActionEvent event) throws IOException {
+         Stage Issuablebooksstage= new Stage();
+        FXMLLoader IssuablebooksLoader = new FXMLLoader();
+         Pane Issuablebooksroot = (Pane)IssuablebooksLoader.load(getClass().getResource("/Book/issuablebook.fxml").openStream());
+          IssuablebookController add = ( IssuablebookController)IssuablebooksLoader.getController();
+         Scene scene =new Scene(Issuablebooksroot);
+         Issuablebooksstage.setScene(scene);
+         Issuablebooksstage.setTitle("Issuable Books");
+         Issuablebooksstage.show();
     }
 
 

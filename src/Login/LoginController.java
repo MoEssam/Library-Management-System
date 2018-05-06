@@ -30,6 +30,8 @@ public class LoginController implements Initializable {
     private JFXButton CancelButton;
     @FXML
     private JFXButton signupbtn;
+    @FXML
+    private JFXButton forgetbtn;
 
  
     @Override
@@ -81,5 +83,18 @@ public class LoginController implements Initializable {
         MemStage.setTitle("Choose one Option only");
         MemStage.show();
         
+    }
+
+    @FXML
+    private void forgetpassword(ActionEvent event) throws IOException {
+        
+        Stage MemStage=new Stage();
+        FXMLLoader forgetLoader=new FXMLLoader();
+        Pane foregtroot = (Pane)forgetLoader.load(getClass().getResource("ForgetPassword.fxml").openStream());
+        ForgetPasswordController memberController=(ForgetPasswordController)forgetLoader.getController();
+        Scene scene=new Scene(foregtroot);
+        MemStage.setScene(scene);
+        MemStage.setTitle("Forget Password");
+        MemStage.show();
     }
 }

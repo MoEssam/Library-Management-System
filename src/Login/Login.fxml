@@ -40,5 +40,6 @@
          </font>
       </JFXButton>
       <JFXButton fx:id="signupbtn" layoutX="127.0" layoutY="263.0" onAction="#signup" text="Sign Up" />
+      <JFXButton fx:id="forgetbtn" layoutX="199.0" layoutY="263.0" onAction="#forgetpassword" text="Forget Password" />
    </children>
 </AnchorPane>
