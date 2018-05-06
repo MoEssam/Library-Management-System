@@ -82,22 +82,19 @@ public class AdminController implements Initializable {
     }
 
     @FXML
-    private void handleAddMemBtnAction(ActionEvent event) throws IOException {
+    private void updatemember(ActionEvent event) throws IOException {
             Stage MemStage=new Stage();
-            FXMLLoader memberLoader=new FXMLLoader();
-            Pane memberroot = (Pane)memberLoader.load(getClass().getResource("members.fxml").openStream());
-            MembersController memberController=(MembersController)memberLoader.getController();
-            Scene scene=new Scene(memberroot);
+            FXMLLoader updatememberLoader=new FXMLLoader();
+            Pane updatememberroot = (Pane)updatememberLoader.load(getClass().getResource("updatemember.fxml").openStream());
+            UpdatememberController updatememberController=(UpdatememberController)updatememberLoader.getController();
+            Scene scene=new Scene(updatememberroot);
             MemStage.setScene(scene);
             MemStage.setTitle("Choose one Option only");
             MemStage.show();
-         /*Stage stage = (Stage) addmember.getScene().getWindow();
-                stage.close();
-                differentMemsLogin();
-         */
+         
      
-    }
-  /* public void differentMemsLogin()throws IOException
+    }/*
+   public void differentMemsLogin()throws IOException
     {
         try{
             Stage MemStage=new Stage();
@@ -156,19 +153,7 @@ public class AdminController implements Initializable {
          viewbooksstage.setScene(scene);
          viewbooksstage.setTitle("View Book");
          viewbooksstage.show();
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
+       
     }
 
     @FXML

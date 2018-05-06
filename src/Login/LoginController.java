@@ -1,6 +1,7 @@
 package Login;
 
 import Librarian.AdminController;
+import Librarian.MembersController;
 import com.jfoenix.controls.JFXButton;
 import com.jfoenix.controls.JFXPasswordField;
 import com.jfoenix.controls.JFXTextField;
@@ -27,6 +28,8 @@ public class LoginController implements Initializable {
     private JFXButton Loginbutton;
     @FXML
     private JFXButton CancelButton;
+    @FXML
+    private JFXButton signupbtn;
 
  
     @Override
@@ -65,9 +68,18 @@ public class LoginController implements Initializable {
      }
      catch (IOException e){
          e.printStackTrace();
-     }
-    
-   
-    
+     }   
 }
+    @FXML
+    private void signup(ActionEvent event) throws IOException{
+        Stage MemStage=new Stage();
+        FXMLLoader memberLoader=new FXMLLoader();
+        Pane memberroot = (Pane)memberLoader.load(getClass().getResource("/Librarian/members.fxml").openStream());
+        MembersController memberController=(MembersController)memberLoader.getController();
+        Scene scene=new Scene(memberroot);
+        MemStage.setScene(scene);
+        MemStage.setTitle("Choose one Option only");
+        MemStage.show();
+        
+    }
 }

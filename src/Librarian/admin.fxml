@@ -1,5 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import com.jfoenix.controls.*?>
+<?import java.lang.*?>
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.effect.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
 <?import com.jfoenix.controls.JFXButton?>
 <?import com.jfoenix.controls.JFXTextField?>
 <?import javafx.geometry.Insets?>
@@ -17,7 +24,7 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<StackPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="480.0" prefWidth="679.0" xmlns="http://javafx.com/javafx/8.0.141" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Librarian.AdminController">
+<StackPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="480.0" prefWidth="679.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Librarian.AdminController">
    <children>
       <BorderPane prefHeight="200.0" prefWidth="200.0">
          <top>
@@ -44,7 +51,7 @@
          <right>
             <VBox prefHeight="455.0" prefWidth="148.0" BorderPane.alignment="CENTER">
                <children>
-                  <JFXButton fx:id="addmember" contentDisplay="TOP" onAction="#handleAddMemBtnAction" prefHeight="150.0" prefWidth="150.0" style="-fx-background-color: cyan;" text="Add Member">
+                  <JFXButton fx:id="addmember" contentDisplay="TOP" onAction="#updatemember" prefHeight="150.0" prefWidth="150.0" style="-fx-background-color: cyan;" text="Add Member">
                      <VBox.margin>
                         <Insets top="10.0" />
                      </VBox.margin>
