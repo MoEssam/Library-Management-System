@@ -3,36 +3,36 @@ package Book;
 
 
 public class IssuableBook extends Book {
-    private int NumberOfTimeIssued;
+    private int NumberOfTimesIssued;
     private int LastIssueDateTime;
-    private String IssuanceID;
+    private String HolderName;
     
     public IssuableBook()
     {
         
     }
 
-    public IssuableBook(int NumberOfTimeIssued, int LastIssueDateTime, String IssuanceID) {
-        this.NumberOfTimeIssued = NumberOfTimeIssued;
+    public IssuableBook(int NumberOfTimesIssued, int LastIssueDateTime, String HolderName) {
+        this.NumberOfTimesIssued = NumberOfTimesIssued;
         this.LastIssueDateTime = LastIssueDateTime;
-        this.IssuanceID = IssuanceID;
+        this.HolderName = HolderName;
     }
 
-    public IssuableBook(int NumberOfTimeIssued, int LastIssueDateTime,
-            String IssuanceID, String Tittle, String Author, String SubjectArea,
+    public IssuableBook(int NumberOfTimesIssued, int LastIssueDateTime,
+            String HolderName, String Tittle, String Author, String SubjectArea,
             String ISBN_Number, String DateAdded, String NumberOfCopies) {
         super(Tittle, Author, SubjectArea, ISBN_Number, DateAdded, NumberOfCopies);
-        this.NumberOfTimeIssued = NumberOfTimeIssued;
+        this.NumberOfTimesIssued = NumberOfTimesIssued;
         this.LastIssueDateTime = LastIssueDateTime;
-        this.IssuanceID = IssuanceID;
+        this.HolderName = HolderName;
     }
 
-    public int getNumberOfTimeIssued() {
-        return NumberOfTimeIssued;
+    public int getNumberOfTimesIssued() {
+        return NumberOfTimesIssued;
     }
 
-    public void setNumberOfTimeIssued(int NumberOfTimeIssued) {
-        this.NumberOfTimeIssued = NumberOfTimeIssued;
+    public void setNumberOfTimesIssued(int NumberOfTimeIssued) {
+        this.NumberOfTimesIssued = NumberOfTimeIssued;
     }
 
     public int getLastIssueDateTime() {
@@ -43,12 +43,12 @@ public class IssuableBook extends Book {
         this.LastIssueDateTime = LastIssueDateTime;
     }
 
-    public String getIssuanceID() {
-        return IssuanceID;
+    public String getHolderName() {
+        return HolderName;
     }
 
-    public void setIssuanceID(String IssuanceID) {
-        this.IssuanceID = IssuanceID;
+    public void setHolderName(String HolderName) {
+        this.HolderName = HolderName;
     }
     
     

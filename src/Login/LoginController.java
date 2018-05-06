@@ -70,16 +70,16 @@ public class LoginController implements Initializable {
          e.printStackTrace();
      }   
 }
-    @FXML
+   @FXML
     private void signup(ActionEvent event) throws IOException{
-        Stage MemStage=new Stage();
-        FXMLLoader memberLoader=new FXMLLoader();
-        Pane memberroot = (Pane)memberLoader.load(getClass().getResource("/Librarian/members.fxml").openStream());
-        MembersController memberController=(MembersController)memberLoader.getController();
-        Scene scene=new Scene(memberroot);
-        MemStage.setScene(scene);
-        MemStage.setTitle("Choose one Option only");
-        MemStage.show();
+        Stage signupstage=new Stage();
+        FXMLLoader signupLoader=new FXMLLoader();
+        Pane signuproot = (Pane)signupLoader.load(getClass().getResource("Sign Up.fxml").openStream());
+        SignUpController memberController=(SignUpController)signupLoader.getController();
+        Scene scene=new Scene(signuproot);
+        signupstage.setScene(scene);
+        signupstage.setTitle("Sign Up");
+        signupstage.show();
         
     }
 }

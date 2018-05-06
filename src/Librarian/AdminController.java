@@ -1,6 +1,7 @@
 package Librarian;
 
 import Book.AddBookController;
+import Book.IssuablebookController;
 import Book.ViewBookController;
 
 
@@ -83,14 +84,14 @@ public class AdminController implements Initializable {
 
     @FXML
     private void updatemember(ActionEvent event) throws IOException {
-            Stage MemStage=new Stage();
-            FXMLLoader updatememberLoader=new FXMLLoader();
-            Pane updatememberroot = (Pane)updatememberLoader.load(getClass().getResource("updatemember.fxml").openStream());
-            UpdatememberController updatememberController=(UpdatememberController)updatememberLoader.getController();
-            Scene scene=new Scene(updatememberroot);
-            MemStage.setScene(scene);
-            MemStage.setTitle("Choose one Option only");
-            MemStage.show();
+            Stage addmemberstage= new Stage();
+        FXMLLoader addmembersLoader = new FXMLLoader();
+         Pane addmember = (Pane)addmembersLoader.load(getClass().getResource("members.fxml").openStream());
+         MembersController add = (MembersController)addmembersLoader.getController();
+         Scene scene =new Scene(addmember);
+         addmemberstage.setScene(scene);
+         addmemberstage.setTitle("Add Member");
+         addmemberstage.show();
          
      
     }/*
@@ -157,7 +158,16 @@ public class AdminController implements Initializable {
     }
 
     @FXML
-    private void handleSettingsBtnAction(ActionEvent event) {
+    private void handleSettingsBtnAction(ActionEvent event) throws IOException {
+         Stage Issuablebooksstage= new Stage();
+        FXMLLoader IssuablebooksLoader = new FXMLLoader();
+         Pane Issuablebooksroot = (Pane)IssuablebooksLoader.load(getClass().getResource("/Book/issuablebook.fxml").openStream());
+          IssuablebookController add = ( IssuablebookController)IssuablebooksLoader.getController();
+         Scene scene =new Scene(Issuablebooksroot);
+         Issuablebooksstage.setScene(scene);
+         Issuablebooksstage.setTitle("Issuable Books");
+         Issuablebooksstage.show();
+        
     }
 
 
