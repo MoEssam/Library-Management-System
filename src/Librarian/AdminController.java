@@ -3,27 +3,37 @@ package Librarian;
 import Book.AddBookController;
 import Book.IssuablebookController;
 import Book.ViewBookController;
+import Database.dbConnection;
+import Login.ForgetPasswordController;
 
 
 import com.jfoenix.controls.JFXTextField;
 import com.jfoenix.controls.JFXButton;
 import java.io.IOException;
 import java.net.URL;
+import java.sql.Connection;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.sql.SQLException;
 import java.util.ResourceBundle;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
 import javafx.scene.Scene;
 import javafx.scene.control.Label;
-import javafx.scene.image.ImageView;
+import javafx.scene.control.Tab;
 import javafx.scene.layout.Pane;
 import javafx.stage.Stage;
 
 
 public class AdminController implements Initializable {
 
-
+    Connection conn;
+    ResultSet rs;
+    PreparedStatement pr;
     @FXML
     private JFXTextField enterbookid;
     @FXML
@@ -42,8 +52,6 @@ public class AdminController implements Initializable {
     private JFXButton viewbooks;
     @FXML
     private JFXButton settings;
-    //@FXML
-    //private Tab bookissue;
     @FXML
     private Label namebook;
     @FXML
@@ -52,25 +60,22 @@ public class AdminController implements Initializable {
     private Label member_name;
     @FXML
     private Label contactnumber;
-    @FXML
-    private ImageView add_book_img;
-    @FXML
-    private ImageView view_mem_img;
-    @FXML
-    private ImageView catalogue_img;
-    @FXML
-    private ImageView issue_img;
-    @FXML
-    private ImageView add_member_img;
+    
     @FXML
     private JFXButton renewbtn;
+;
+
 
 
 
 
     @Override
     public void initialize(URL url, ResourceBundle rb) {
-      
+      try {
+            conn=dbConnection.getConnection();
+        } catch (SQLException ex) {
+            Logger.getLogger(ForgetPasswordController.class.getName()).log(Level.SEVERE, null, ex);
+        }
     }    
 
 
@@ -168,7 +173,44 @@ public class AdminController implements Initializable {
          Issuablebooksstage.setTitle("Issuable Books");
          Issuablebooksstage.show();
     }
-
-
     
+    
+    
+    
+    
+    public void searchbook() throws SQLException
+    {
+        String get_id=enterbookid.getText();
+        String sql="SELECT * FROM book where id = '"+get_id+"'"  ;
+        
+        pr=conn.prepareStatement(sql);
+       
+        rs=pr.executeQuery();
+        if(rs.next()){
+            namebook.setText(rs.getString(1));
+            authorname.setText(rs.getString(2));
+            rs.close();
+            pr.close();
+        }
+    }
+    public void searchmember() throws SQLException
+    {
+       String get_id=entermemberid.getText();
+        String sql="SELECT * FROM members where id = '"+get_id+"'"  ;
+        pr=conn.prepareStatement(sql);
+        rs=pr.executeQuery();
+        if(rs.next()){
+            member_name.setText(rs.getString(1));
+            contactnumber.setText(rs.getString(7));
+            rs.close();
+            pr.close();
+        }
+    }  
+    @FXML
+    public void searchbook(ActionEvent event) throws SQLException {
+        searchbook();
+        searchmember();
+        
+    }
+ 
 }

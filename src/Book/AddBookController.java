@@ -28,6 +28,8 @@ public class AddBookController implements Initializable {
     private JFXTextField subjarea;
     @FXML
     private JFXTextField dateadded;
+    @FXML
+    private JFXTextField numberofcopies;
 
     @Override
     public void initialize(URL url, ResourceBundle rb) {
@@ -35,7 +37,7 @@ public class AddBookController implements Initializable {
     }    
     @FXML
     private void handleSaveBtnAction(ActionEvent event) throws SQLException {   
-        b1.Update(title.getText(),id.getText(),author.getText());
+        b1.Update(title.getText(),author.getText(),id.getText(),subjarea.getText(),dateadded.getText(),numberofcopies.getText());
         
     }
 

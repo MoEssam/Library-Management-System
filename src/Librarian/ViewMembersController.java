@@ -62,18 +62,18 @@ public class ViewMembersController implements Initializable {
         try {
             ResultSet rs=conn.createStatement().executeQuery(sql);
             while(rs.next()){
-                this.data.add(new MembersData(rs.getString(1), rs.getString(2), rs.getString(3), rs.getString(4), rs.getString(5), rs.getString(6), rs.getString(7)));
+                data.add(new MembersData(rs.getString(1), rs.getString(2), rs.getString(3), rs.getString(4), rs.getString(5), rs.getString(6), rs.getString(7)));
             }
         } catch (SQLException ex) {
             Logger.getLogger(ViewMembersController.class.getName()).log(Level.SEVERE, null, ex);
         }
         firstnamecolumn.setCellValueFactory(new PropertyValueFactory<>("firstname"));
         lastnamecolumn.setCellValueFactory(new PropertyValueFactory<>("lastname"));
-        dateofbirthcolumn.setCellValueFactory(new PropertyValueFactory<>("dateofbirthc"));
-        dateofmembershipcolumn.setCellValueFactory(new PropertyValueFactory<>("dateofmembership"));
+        dateofbirthcolumn.setCellValueFactory(new PropertyValueFactory<>("dateofbirth"));
+        dateofmembershipcolumn.setCellValueFactory(new PropertyValueFactory<>("date_of_membership"));
         addresscolumn.setCellValueFactory(new PropertyValueFactory<>("address"));
         contactnumbercolumn.setCellValueFactory(new PropertyValueFactory<>("contactnumber"));
-        emailadresscolumn.setCellValueFactory(new PropertyValueFactory<>("emailadress"));
+        emailadresscolumn.setCellValueFactory(new PropertyValueFactory<>("emailaddress"));
         viewmember.setItems(null);
         viewmember.setItems(data);
     }

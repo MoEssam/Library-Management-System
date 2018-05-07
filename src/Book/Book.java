@@ -100,15 +100,18 @@ public class Book {
         
     }*/
     
-    public String Update(String title,String id,String author)
+    public String Update(String title,String author,String id,String SubjectArea,String DateAdded,String NumberofCopies)
     {
-         String sqlInsrt="INSERT INTO book(title,id,author) VALUES(?,?,?)";
+         String sqlInsrt="INSERT INTO book(title,author,id,SubjectArea,DateAdded,NumberofCopies) VALUES(?,?,?,?,?,?)";
         try{
             Connection conn = dbConnection.getConnection();
             PreparedStatement stmt= conn.prepareStatement(sqlInsrt);
             stmt.setString(1,title);
-            stmt.setString(2,id);
-            stmt.setString(3,author);
+            stmt.setString(2,author);
+            stmt.setString(3,id);
+            stmt.setString(4,SubjectArea);
+            stmt.setString(5,DateAdded);
+            stmt.setString(6,NumberofCopies);
             stmt.execute();
             conn.close();
             

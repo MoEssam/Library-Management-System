@@ -53,7 +53,7 @@
                   <Font size="14.0" />
                </font>
             </JFXTextField>
-            <JFXTextField labelFloat="true" promptText="Number Of Copies" style="-fx-text-fill: black;">
+            <JFXTextField fx:id="numberofcopies" labelFloat="true" promptText="Number Of Copies" style="-fx-text-fill: black;">
                <VBox.margin>
                   <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
                </VBox.margin>
