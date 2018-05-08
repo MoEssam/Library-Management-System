@@ -24,7 +24,7 @@ public class ReferenceBook extends Book {
 
     public ReferenceBook(String ReferenceID, String Tittle, String Author, 
             String SubjectArea, String ISBN_Number, String DateAdded,
-            int NumberOfCopies) {
+            String NumberOfCopies) {
         super(Tittle, Author, SubjectArea, ISBN_Number, DateAdded, NumberOfCopies);
         this.ReferenceID = ReferenceID;
     }

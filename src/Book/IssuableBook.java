@@ -31,7 +31,7 @@ public class IssuableBook extends Book {
     
     public IssuableBook(String NumberOfTimesIssued, String LastIssueDateTime,
             String HolderName, String Title, String Author, String SubjectArea,
-            String ISBN_Number, String DateAdded, int NumberOfCopies) {
+            String ISBN_Number, String DateAdded, String NumberOfCopies) {
         super(Title, Author, SubjectArea, ISBN_Number, DateAdded, NumberOfCopies);
         this.NumberOfTimesIssued = NumberOfTimesIssued;
         this.LastIssueDateTime = LastIssueDateTime;

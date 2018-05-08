@@ -110,7 +110,10 @@
                                                 <Font size="14.0" />
                                              </font>
                                           </JFXTextField>
-                                          <Label fx:id="dateadded" prefHeight="17.0" prefWidth="164.0" text="Date Added" />
+                                          <Label fx:id="dateadded" prefHeight="27.0" prefWidth="158.0" text="Date Added">
+                                             <font>
+                                                <Font size="14.0" />
+                                             </font></Label>
                                           <VBox alignment="CENTER" prefHeight="87.0" prefWidth="307.0">
                                              <HBox.margin>
                                                 <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
@@ -138,7 +141,13 @@
                                        <VBox.margin>
                                           <Insets top="50.0" />
                                        </VBox.margin></HBox>
-                                    <JFXButton onAction="#searchbook" text="Search" />
+                                    <JFXButton buttonType="RAISED" onAction="#searchbook" prefHeight="39.0" prefWidth="82.0" style="-fx-background-color: cyan;" text="Search">
+                                       <VBox.margin>
+                                          <Insets left="30.0" />
+                                       </VBox.margin>
+                                       <font>
+                                          <Font size="14.0" />
+                                       </font></JFXButton>
                                     <Label prefHeight="37.0" prefWidth="531.0" style="-fx-background-color: black; -fx-text-fill: white;" text="Member Information">
                                        <font>
                                           <Font size="16.0" />
@@ -205,17 +214,62 @@
                                     <Font size="14.0" />
                                  </font>
                               </JFXTextField>
-                              <Label fx:id="lbl1" layoutX="41.0" layoutY="120.0" text="Label" />
-                              <Label fx:id="lbl2" layoutX="41.0" layoutY="153.0" text="Label" />
-                              <Label fx:id="lbl3" layoutX="41.0" layoutY="179.0" text="Label" />
-                              <Label fx:id="lbl4" layoutX="41.0" layoutY="205.0" text="Label" />
-                              <Label fx:id="lbl5" layoutX="41.0" layoutY="232.0" text="Label" />
-                              <Label fx:id="lbl6" layoutX="41.0" layoutY="259.0" text="Label" />
-                              <Label fx:id="lbl7" layoutX="41.0" layoutY="286.0" text="Label" />
-                              <Label fx:id="lbl8" layoutX="41.0" layoutY="310.0" text="Label" />
-                              <Label fx:id="lbl9" layoutX="41.0" layoutY="335.0" text="Label" />
-                              <Label fx:id="lbl10" layoutX="41.0" layoutY="367.0" text="Label" />
-                              <Button layoutX="445.0" layoutY="201.0" mnemonicParsing="false" onAction="#returnbook" text="Return" />
+                              <Label layoutX="20.0" layoutY="77.0" prefHeight="37.0" prefWidth="102.0" text="Member Name">
+                                 <font>
+                                    <Font size="14.0" />
+                                 </font></Label>
+                              <Label layoutX="30.0" layoutY="143.0" prefHeight="30.0" prefWidth="70.0" text="Membre ID">
+                                 <font>
+                                    <Font size="14.0" />
+                                 </font></Label>
+                              <Label layoutX="30.0" layoutY="207.0" prefHeight="30.0" prefWidth="70.0" text="Book Title">
+                                 <font>
+                                    <Font size="14.0" />
+                                 </font></Label>
+                              <Label layoutX="31.0" layoutY="327.0" prefHeight="30.0" prefWidth="83.0" text="Book Author">
+                                 <font>
+                                    <Font size="14.0" />
+                                 </font></Label>
+                              <Label layoutX="36.0" layoutY="383.0" prefHeight="30.0" prefWidth="70.0" text="Issue Date">
+                                 <font>
+                                    <Font size="14.0" />
+                                 </font></Label>
+                              <JFXTextField fx:id="txt1" labelFloat="true" layoutX="169.0" layoutY="78.0" promptText="Member Name">
+                                 <font>
+                                    <Font size="14.0" />
+                                 </font>
+                              </JFXTextField>
+                              <JFXTextField fx:id="txt2" labelFloat="true" layoutX="169.0" layoutY="140.0" promptText="Member ID">
+                                 <font>
+                                    <Font size="14.0" />
+                                 </font>
+                              </JFXTextField>
+                              <JFXTextField fx:id="txt4" labelFloat="true" layoutX="169.0" layoutY="262.0" promptText="Book ID">
+                                 <font>
+                                    <Font size="14.0" />
+                                 </font>
+                              </JFXTextField>
+                              <JFXTextField fx:id="txt5" labelFloat="true" layoutX="169.0" layoutY="324.0" promptText="Book Author">
+                                 <font>
+                                    <Font size="14.0" />
+                                 </font>
+                              </JFXTextField>
+                              <JFXTextField fx:id="txt6" labelFloat="true" layoutX="178.0" layoutY="380.0" promptText="Issue Date">
+                                 <font>
+                                    <Font size="14.0" />
+                                 </font>
+                              </JFXTextField>
+                              <Label layoutX="37.0" layoutY="265.0" prefHeight="30.0" prefWidth="70.0" text="Book ID">
+                                 <font>
+                                    <Font size="14.0" />
+                                 </font>
+                              </Label>
+                              <JFXTextField fx:id="txt3" labelFloat="true" layoutX="169.0" layoutY="204.0" promptText="Book Title">
+                                 <font>
+                                    <Font size="14.0" />
+                                 </font>
+                              </JFXTextField>
+                              <JFXButton layoutX="440.0" layoutY="161.0" onAction="#returnbook" text="Return" />
                            </children></AnchorPane>
                   </content>
                 </Tab>

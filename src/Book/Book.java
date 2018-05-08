@@ -14,7 +14,7 @@ public class Book {
     private String SubjectArea;
     private String ISBN_Number;
     private String DateAdded;
-    private int NumberOfCopies;
+    private String NumberOfCopies;
     
     
     public Book()
@@ -22,7 +22,7 @@ public class Book {
         
     }
 
-    public Book(String Title, String Author, String SubjectArea, String ISBN_Number, String DateAdded, int NumberOfCopies) {
+    public Book(String Title, String Author, String SubjectArea, String ISBN_Number, String DateAdded, String NumberOfCopies) {
         this.Title = Title;
         this.Author = Author;
         this.SubjectArea = SubjectArea;
@@ -79,11 +79,11 @@ public class Book {
         this.DateAdded = DateAdded;
     }
 
-    public int getNumberOfCopies() {
+    public String getNumberOfCopies() {
         return NumberOfCopies;
     }
 
-    public void setNumberOfCopies(int NumberOfCopies) {
+    public void setNumberOfCopies(String NumberOfCopies) {
         this.NumberOfCopies = NumberOfCopies;
     }
 
@@ -126,15 +126,40 @@ public class Book {
         }
         return null;
     }
+    public String Return(String BookTitle,String BookID,String Author,String Date,String HolderName,String memberid)
+    {
+         String sql1="INSERT INTO return(BookTitle,BookID,Author,Date,HolderName,memberid) VALUES(?,?,?,?,?,?)";
+        try{
+            Connection conn = dbConnection.getConnection();
+            PreparedStatement stmt= conn.prepareStatement(sql1);
+            stmt.setString(1,BookTitle);
+            stmt.setString(2,BookID);
+            stmt.setString(3,Author);
+            stmt.setString(4,Date);
+            stmt.setString(5,HolderName);
+            stmt.setString(6,memberid);
+            stmt.execute();
+            conn.close();
+            
+        }
+        catch(SQLException e){
+            e.printStackTrace();
+        }
+        return null;
+    }
 
-}
 
 
     
-   /*public String removeBook()
+     public String removeBook() throws SQLException
    {
-       
-   }*/
+        String sql1="DELETE FROM book where id = ?"; 
+       Connection conn = dbConnection.getConnection();
+       PreparedStatement stmt= conn.prepareStatement(sql1);
+        return null;
+     
+   }
+}
 
 
     

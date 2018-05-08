@@ -6,6 +6,7 @@ import Book.ViewBookController;
 import Database.dbConnection;
 import Login.ForgetPasswordController;
 import Book.IssuableBook;
+import Book.Book;
 
 
 import com.jfoenix.controls.JFXTextField;
@@ -63,29 +64,22 @@ public class AdminController implements Initializable {
     IssuableBook i1=new IssuableBook();
     @FXML
     private Label dateadded;
+
     @FXML
-    private Label lbl1;
+    private JFXTextField txt1;
     @FXML
-    private Label lbl2;
+    private JFXTextField txt2;
     @FXML
-    private Label lbl3;
+    private JFXTextField txt4;
     @FXML
-    private Label lbl4;
+    private JFXTextField txt5;
     @FXML
-    private Label lbl5;
+    private JFXTextField txt6;
     @FXML
-    private Label lbl6;
-    @FXML
-    private Label lbl7;
-    @FXML
-    private Label lbl8;
-    @FXML
-    private Label lbl9;
-    @FXML
-    private Label lbl10;
+    private JFXTextField txt3;
     
 
-
+    Book b1=new Book();
 
 
 
@@ -232,16 +226,17 @@ public class AdminController implements Initializable {
         pr=conn.prepareStatement(sql);
         rs=pr.executeQuery();
          if(rs.next()){
-            lbl1.setText(rs.getString("HolderName"));
-            lbl2.setText(rs.getString("memberid"));
-            lbl3.setText(rs.getString("BookTitle"));
-            lbl4.setText(rs.getString("BookID"));
-            lbl5.setText(rs.getString("Author"));
-            lbl6.setText(rs.getString("IssueDate"));
+            txt1.setText(rs.getString("HolderName"));
+            txt2.setText(rs.getString("memberid"));
+            txt3.setText(rs.getString("BookTitle"));
+            txt4.setText(rs.getString("BookID"));
+            txt5.setText(rs.getString("Author"));
+            txt6.setText(rs.getString("IssueDate"));
             rs.close();
             pr.close();
         
     }
- 
+          b1.Return(txt3.getText(), txt4.getText(), txt5.getText(), txt6.getText(), txt1.getText(), txt2.getText());
+         
 }
 }
