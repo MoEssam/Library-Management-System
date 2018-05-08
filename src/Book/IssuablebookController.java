@@ -52,21 +52,21 @@ public class IssuablebookController implements Initializable {
             Logger.getLogger(ViewMembersController.class.getName()).log(Level.SEVERE, null, ex);
         }
         issue=FXCollections.observableArrayList();
+        Loadissue();
     } 
-    private void LoadMembersData(){
+    private void Loadissue(){
             
         try {
             ResultSet rs=conn.createStatement().executeQuery(sql);
             while(rs.next()){
-                issue.add(new IssuableBook());
+                issue.add(new IssuableBook(rs.getString("BookTitle"), rs.getString("DateAdded"), rs.getString("HolderName")));
             }    
         } catch (SQLException ex) {
             Logger.getLogger(ViewMembersController.class.getName()).log(Level.SEVERE, null, ex);
         }
-        booktitile.setCellValueFactory(new PropertyValueFactory<>("firstname"));
-        holdername.setCellValueFactory(new PropertyValueFactory<>("lastname"));
-        noOftimesissued.setCellValueFactory(new PropertyValueFactory<>("dateofbirth"));
-        //lasttimeissued.setCellValueFactory(new PropertyValueFactory<>("date_of_membership")); 
+        booktitile.setCellValueFactory(new PropertyValueFactory<>("Title"));
+        holdername.setCellValueFactory(new PropertyValueFactory<>("HolderName"));
+        lasttimeissued.setCellValueFactory(new PropertyValueFactory<>("LastIssueDateTime")); 
         issuablebook.setItems(null);
         issuablebook.setItems(issue);
     }

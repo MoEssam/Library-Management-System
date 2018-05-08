@@ -14,7 +14,7 @@ public class Book {
     private String SubjectArea;
     private String ISBN_Number;
     private String DateAdded;
-    private String NumberOfCopies;
+    private int NumberOfCopies;
     
     
     public Book()
@@ -22,7 +22,7 @@ public class Book {
         
     }
 
-    public Book(String Title, String Author, String SubjectArea, String ISBN_Number, String DateAdded, String NumberOfCopies) {
+    public Book(String Title, String Author, String SubjectArea, String ISBN_Number, String DateAdded, int NumberOfCopies) {
         this.Title = Title;
         this.Author = Author;
         this.SubjectArea = SubjectArea;
@@ -31,6 +31,10 @@ public class Book {
         this.NumberOfCopies = NumberOfCopies;
     }
     
+     public Book(String Title) {
+        this.Title = Title;   
+       
+    }
     
     
 
@@ -74,11 +78,11 @@ public class Book {
         this.DateAdded = DateAdded;
     }
 
-    public String getNumberOfCopies() {
+    public int getNumberOfCopies() {
         return NumberOfCopies;
     }
 
-    public void setNumberOfCopies(String NumberOfCopies) {
+    public void setNumberOfCopies(int NumberOfCopies) {
         this.NumberOfCopies = NumberOfCopies;
     }
 
@@ -121,7 +125,9 @@ public class Book {
         }
         return null;
     }
+
 }
+
 
     
    /*public String removeBook()

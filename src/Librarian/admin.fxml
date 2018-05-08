@@ -94,13 +94,13 @@
          <center>
             <TabPane prefHeight="200.0" prefWidth="200.0" tabClosingPolicy="UNAVAILABLE" BorderPane.alignment="CENTER">
               <tabs>
-                <Tab fx:id="bookissue" text="Book Issue">
+                <Tab text="Book Issue">
                   <content>
                     <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
                            <children>
                               <VBox layoutX="14.0" layoutY="-32.0" prefHeight="426.0" prefWidth="531.0" AnchorPane.bottomAnchor="32.0" AnchorPane.leftAnchor="14.0" AnchorPane.rightAnchor="-14.0" AnchorPane.topAnchor="-32.0">
                                  <children>
-                                    <HBox alignment="CENTER" prefHeight="149.0" prefWidth="531.0">
+                                    <HBox alignment="CENTER" prefHeight="182.0" prefWidth="531.0">
                                        <children>
                                           <JFXTextField fx:id="enterbookid" labelFloat="true" maxWidth="141.0" minWidth="135.0" prefHeight="31.0" prefWidth="141.0" promptText="Enter Book ID">
                                              <HBox.margin>
@@ -110,7 +110,8 @@
                                                 <Font size="14.0" />
                                              </font>
                                           </JFXTextField>
-                                          <VBox alignment="CENTER" prefHeight="151.0" prefWidth="386.0">
+                                          <Label fx:id="dateadded" prefHeight="17.0" prefWidth="164.0" text="Date Added" />
+                                          <VBox alignment="CENTER" prefHeight="87.0" prefWidth="307.0">
                                              <HBox.margin>
                                                 <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
                                              </HBox.margin>
@@ -195,45 +196,25 @@
                            </children></AnchorPane>
                   </content>
                 </Tab>
-                <Tab fx:id="renew" text="Renew">
+                <Tab text="Return">
                   <content>
                     <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
                            <children>
-                              <BorderPane layoutY="8.0" prefHeight="426.0" prefWidth="531.0" AnchorPane.bottomAnchor="-8.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="8.0">
-                                 <top>
-                                    <JFXTextField fx:id="bookId" labelFloat="true" maxWidth="275.0" minWidth="274.0" prefHeight="31.0" prefWidth="274.0" promptText="Enter Book ID" BorderPane.alignment="CENTER">
-                                       <BorderPane.margin>
-                                          <Insets top="10.0" />
-                                       </BorderPane.margin>
-                                       <font>
-                                          <Font size="14.0" />
-                                       </font>
-                                    </JFXTextField>
-                                 </top>
-                                 <bottom>
-                                    <HBox alignment="CENTER" prefHeight="71.0" prefWidth="531.0" BorderPane.alignment="CENTER">
-                                       <children>
-                                          <JFXButton fx:id="renewbtn" onAction="#handleRenewBtnAction" prefHeight="53.0" prefWidth="174.0" style="-fx-background-color: cyan;" text="Renew">
-                                             <font>
-                                                <Font size="14.0" />
-                                             </font>
-                                             <padding>
-                                                <Insets bottom="20.0" left="10.0" right="10.0" />
-                                             </padding></JFXButton>
-                                          <JFXButton fx:id="submission" layoutX="250.0" layoutY="33.0" onAction="#handleSubmissionBtnAction" prefHeight="53.0" prefWidth="165.0" style="-fx-background-color: cyan;" text="Submission">
-                                             <font>
-                                                <Font size="14.0" />
-                                             </font>
-                                             <padding>
-                                                <Insets bottom="20.0" left="10.0" right="10.0" />
-                                             </padding>
-                                             <HBox.margin>
-                                                <Insets left="10.0" />
-                                             </HBox.margin></JFXButton>
-                                       </children>
-                                    </HBox>
-                                 </bottom>
-                              </BorderPane>
+                              <JFXTextField fx:id="bookId" labelFloat="true" layoutX="106.0" layoutY="26.0" maxWidth="275.0" minWidth="274.0" prefHeight="31.0" prefWidth="274.0" promptText="Enter Book ID">
+                                 <font>
+                                    <Font size="14.0" />
+                                 </font>
+                              </JFXTextField>
+                              <Label fx:id="lbl1" layoutX="41.0" layoutY="120.0" text="Label" />
+                              <Label fx:id="lbl2" layoutX="41.0" layoutY="152.0" text="Label" />
+                              <Label fx:id="lbl3" layoutX="41.0" layoutY="179.0" text="Label" />
+                              <Label fx:id="lbl4" layoutX="41.0" layoutY="205.0" text="Label" />
+                              <Label fx:id="lbl5" layoutX="41.0" layoutY="232.0" text="Label" />
+                              <Label layoutX="41.0" layoutY="259.0" text="Label" />
+                              <Label layoutX="41.0" layoutY="286.0" text="Label" />
+                              <Label layoutX="41.0" layoutY="310.0" text="Label" />
+                              <Label layoutX="41.0" layoutY="335.0" text="Label" />
+                              <Label layoutX="41.0" layoutY="367.0" text="Label" />
                            </children></AnchorPane>
                   </content>
                 </Tab>

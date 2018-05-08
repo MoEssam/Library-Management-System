@@ -5,6 +5,7 @@ import Book.IssuablebookController;
 import Book.ViewBookController;
 import Database.dbConnection;
 import Login.ForgetPasswordController;
+import Book.IssuableBook;
 
 
 import com.jfoenix.controls.JFXTextField;
@@ -41,8 +42,6 @@ public class AdminController implements Initializable {
     @FXML
     private JFXTextField bookId;
     @FXML
-    private JFXButton submission;
-    @FXML
     private JFXButton addmember;
     @FXML
     private JFXButton addbook;
@@ -61,9 +60,31 @@ public class AdminController implements Initializable {
     @FXML
     private Label contactnumber;
     
+    
+    IssuableBook i1=new IssuableBook();
     @FXML
-    private JFXButton renewbtn;
-;
+    private Label dateadded;
+    @FXML
+    private Label lbl1;
+    @FXML
+    private Label lbl2;
+    @FXML
+    private Label lbl3;
+    @FXML
+    private Label lbl4;
+    @FXML
+    private Label lbl5;
+     @FXML
+    private Label lbl6;
+      @FXML
+    private Label lbl7;
+       @FXML
+    private Label lbl8;
+        @FXML
+    private Label lbl9;
+         @FXML
+    private Label lbl10;
+    
 
 
 
@@ -79,13 +100,18 @@ public class AdminController implements Initializable {
     }    
 
 
-    @FXML
-    private void handleRenewBtnAction(ActionEvent event) {
+    private void handleRenewBtnAction(ActionEvent event) throws SQLException {
+        String id= enterbookid.getText();
+        String sql = "SELECT * FROM issue WHERE BookTitle = '"+id+"'";
+         pr=conn.prepareStatement(sql);
+         while(rs.next()){
+             String bookid= id;
+             String memberid= rs.getString("HolderName");
+             
+         }
+        
     }
 
-    @FXML
-    private void handleSubmissionBtnAction(ActionEvent event) {
-    }
 
     @FXML
     private void updatemember(ActionEvent event) throws IOException {
@@ -178,39 +204,46 @@ public class AdminController implements Initializable {
     
     
     
+    @FXML
     public void searchbook() throws SQLException
     {
         String get_id=enterbookid.getText();
-        String sql="SELECT * FROM book where id = '"+get_id+"'"  ;
-        
+        String sql="SELECT * FROM book where id = '"+get_id+"'"  ;       
         pr=conn.prepareStatement(sql);
-       
         rs=pr.executeQuery();
         if(rs.next()){
-            namebook.setText(rs.getString(1));
-            authorname.setText(rs.getString(2));
+            namebook.setText(rs.getString("title"));
+            authorname.setText(rs.getString("author"));
+            dateadded.setText(rs.getString("DateAdded"));
             rs.close();
             pr.close();
         }
     }
     public void searchmember() throws SQLException
     {
-       String get_id=entermemberid.getText();
+        String get_id=entermemberid.getText();
         String sql="SELECT * FROM members where id = '"+get_id+"'"  ;
         pr=conn.prepareStatement(sql);
         rs=pr.executeQuery();
         if(rs.next()){
-            member_name.setText(rs.getString(1));
-            contactnumber.setText(rs.getString(7));
+            member_name.setText(rs.getString("firstname"));
+            contactnumber.setText(rs.getString("contactnumber"));
             rs.close();
             pr.close();
         }
-    }  
-    @FXML
+    } 
+    public void update() throws SQLException
+    {
+        String get_id=enterbookid.getText();
+        String sql="UPDATE 'book' set 'NumberofCopies' = 'NumberofCopies' -1 WHERE id= '"+get_id+"'";
+        pr=conn.prepareStatement(sql);
+        
+    } 
     public void searchbook(ActionEvent event) throws SQLException {
         searchbook();
         searchmember();
-        
+        i1.issue(namebook.getText(), member_name.getText(), contactnumber.getText(),dateadded.getText());
+        update();
     }
  
 }

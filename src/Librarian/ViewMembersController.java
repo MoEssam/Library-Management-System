@@ -51,7 +51,6 @@ public class ViewMembersController implements Initializable {
             Logger.getLogger(ViewMembersController.class.getName()).log(Level.SEVERE, null, ex);
         }
             data=FXCollections.observableArrayList();
-            //setcell();
             LoadMembersData();
 
         
