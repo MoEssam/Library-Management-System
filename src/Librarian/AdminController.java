@@ -237,6 +237,6 @@ public class AdminController implements Initializable {
         
     }
           b1.Return(txt3.getText(), txt4.getText(), txt5.getText(), txt6.getText(), txt1.getText(), txt2.getText());
-         
+          b1.removeBook(txt2.getText());
 }
 }

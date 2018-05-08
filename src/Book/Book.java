@@ -151,11 +151,19 @@ public class Book {
 
 
     
-     public String removeBook() throws SQLException
+     public String removeBook(String memberid)
    {
-        String sql1="DELETE FROM book where id = ?"; 
+        String sql1="DELETE FROM issue where memberid = ?"; 
+        try{
        Connection conn = dbConnection.getConnection();
        PreparedStatement stmt= conn.prepareStatement(sql1);
+       stmt.setString(1, memberid);
+       stmt.execute();
+       conn.close();
+        }
+       catch(SQLException e){
+            e.printStackTrace();
+        }
         return null;
      
    }
