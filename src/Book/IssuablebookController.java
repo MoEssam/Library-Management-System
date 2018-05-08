@@ -39,10 +39,15 @@ public class IssuablebookController implements Initializable {
     @FXML
     private TableColumn<IssuableBook, String> holdername;
     @FXML
-    private TableColumn<IssuableBook, String> noOftimesissued;
+    private TableColumn<IssuableBook, String> memberid;
     @FXML
-    private TableColumn<IssuableBook, String> lasttimeissued;
+    private TableColumn<IssuableBook, String> bookid;
+    @FXML
+    private TableColumn<IssuableBook, String> author;
+    @FXML
+    private TableColumn<IssuableBook, String> date;
     private String sql= "SELECT * FROM issue";
+    
 
     @Override
     public void initialize(URL url, ResourceBundle rb) {
@@ -59,14 +64,18 @@ public class IssuablebookController implements Initializable {
         try {
             ResultSet rs=conn.createStatement().executeQuery(sql);
             while(rs.next()){
-                issue.add(new IssuableBook(rs.getString("BookTitle"), rs.getString("DateAdded"), rs.getString("HolderName")));
+                issue.add(new IssuableBook(rs.getString("BookTitle"), rs.getString("IssueDate"), rs.getString("Author"),rs.getString("HolderName"),rs.getString("BookID"),rs.getString("memberid")));
             }    
         } catch (SQLException ex) {
             Logger.getLogger(ViewMembersController.class.getName()).log(Level.SEVERE, null, ex);
         }
         booktitile.setCellValueFactory(new PropertyValueFactory<>("Title"));
-        holdername.setCellValueFactory(new PropertyValueFactory<>("HolderName"));
-        lasttimeissued.setCellValueFactory(new PropertyValueFactory<>("LastIssueDateTime")); 
+        holdername.setCellValueFactory(new PropertyValueFactory<>("Author"));
+        memberid.setCellValueFactory(new PropertyValueFactory<>("member_id"));
+        bookid.setCellValueFactory(new PropertyValueFactory<>("ISBN_Number"));
+        author.setCellValueFactory(new PropertyValueFactory<>("HolderName"));
+        date.setCellValueFactory(new PropertyValueFactory<>("LastIssueDateTime"));
+       
         issuablebook.setItems(null);
         issuablebook.setItems(issue);
     }

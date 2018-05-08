@@ -31,9 +31,10 @@ public class Book {
         this.NumberOfCopies = NumberOfCopies;
     }
     
-     public Book(String Title) {
+     public Book(String Title,String Author,String ISBN_Number) {
         this.Title = Title;   
-       
+        this.Author = Author;
+        this.ISBN_Number = ISBN_Number;
     }
     
     

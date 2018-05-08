@@ -49,8 +49,8 @@ public class ForgetPasswordController implements Initializable {
     }    
     @FXML
     public void search() throws SQLException{
-        String get_name=txt1.getText();
-        String sql="SELECT * FROM librarian where username = '"+get_name+"'"  ;
+        String get_id=txt1.getText();
+        String sql="SELECT * FROM librarian where id = '"+get_id+"'"  ;
         pr=conn.prepareStatement(sql);
         rs=pr.executeQuery();
         if(rs.next()){

@@ -87,8 +87,8 @@ public class MembersData  {
         this.emailaddress = emailaddress;
     }
 
-    public String add_member(String firstname, String middleinitial, String lastname, String dateofbirth, String date_of_membership, String address, String contactnumber, String emailaddress) {
-        String sqlInsrt="INSERT INTO members(firstname,middleinitial,lastname,dateofbirth,date_of_membership,address,contactnumber,emailaddress) VALUES(?,?,?,?,?,?,?,?)";
+    public String add_member(String firstname, String middleinitial, String lastname, String dateofbirth, String date_of_membership, String address, String contactnumber, String emailaddress,String id) {
+        String sqlInsrt="INSERT INTO members(firstname,middleinitial,lastname,dateofbirth,date_of_membership,address,contactnumber,emailaddress,id) VALUES(?,?,?,?,?,?,?,?,?)";
         try{
             Connection conn = dbConnection.getConnection();
             PreparedStatement stmt= conn.prepareStatement(sqlInsrt);
@@ -100,6 +100,7 @@ public class MembersData  {
             stmt.setString(6,address);
             stmt.setString(7,contactnumber);
             stmt.setString(8,emailaddress);
+            stmt.setString(9,id);
             stmt.execute();
             conn.close();
             

@@ -25,7 +25,6 @@ import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
 import javafx.scene.Scene;
 import javafx.scene.control.Label;
-import javafx.scene.control.Tab;
 import javafx.scene.layout.Pane;
 import javafx.stage.Stage;
 
@@ -74,15 +73,15 @@ public class AdminController implements Initializable {
     private Label lbl4;
     @FXML
     private Label lbl5;
-     @FXML
+    @FXML
     private Label lbl6;
-      @FXML
+    @FXML
     private Label lbl7;
-       @FXML
+    @FXML
     private Label lbl8;
-        @FXML
+    @FXML
     private Label lbl9;
-         @FXML
+    @FXML
     private Label lbl10;
     
 
@@ -125,29 +124,8 @@ public class AdminController implements Initializable {
             MemStage.show();
          
      
-    }/*
-   public void differentMemsLogin()throws IOException
-    {
-        try{
-            Stage MemStage=new Stage();
-            FXMLLoader memberLoader=new FXMLLoader();
-            Pane memberroot = (Pane)memberLoader.load(getClass().getResource("/Librarian.choose/chooseTypeMember.fxml").openStream());
-            ChooseTypeMemberController memberController=(ChooseTypeMemberController)memberLoader.getController();
-            Scene scene=new Scene(memberroot);
-            MemStage.setScene(scene);
-            MemStage.setTitle("Choose one Option only");
-            MemStage.show();
-            
-            
-        }
-        catch(IOException e)
-        {
-            e.printStackTrace();
-        }
-            
-            
     }
-*/
+
     @FXML
     private void handleAddBookBtnAction(ActionEvent event) throws IOException {            
          Stage addbookstage = new Stage();
@@ -235,15 +213,35 @@ public class AdminController implements Initializable {
     public void update() throws SQLException
     {
         String get_id=enterbookid.getText();
-        String sql="UPDATE 'book' set 'NumberofCopies' = 'NumberofCopies' -1 WHERE id= '"+get_id+"'";
+        String sql="UPDATE book set NumberofCopies = NumberofCopies -1 where id= '"+get_id+"'";
         pr=conn.prepareStatement(sql);
         
     } 
     public void searchbook(ActionEvent event) throws SQLException {
         searchbook();
         searchmember();
-        i1.issue(namebook.getText(), member_name.getText(), contactnumber.getText(),dateadded.getText());
-        update();
+        i1.issue(namebook.getText(), member_name.getText(), entermemberid.getText(),enterbookid.getText(),dateadded.getText(),authorname.getText());
+        //update();
+    }
+
+    @FXML
+    private void returnbook(ActionEvent event) throws SQLException {
+        
+        String get_id=bookId.getText();
+        String sql="SELECT * FROM issue where memberid = '"+get_id+"'"  ;
+        pr=conn.prepareStatement(sql);
+        rs=pr.executeQuery();
+         if(rs.next()){
+            lbl1.setText(rs.getString("HolderName"));
+            lbl2.setText(rs.getString("memberid"));
+            lbl3.setText(rs.getString("BookTitle"));
+            lbl4.setText(rs.getString("BookID"));
+            lbl5.setText(rs.getString("Author"));
+            lbl6.setText(rs.getString("IssueDate"));
+            rs.close();
+            pr.close();
+        
     }
  
+}
 }

@@ -8,6 +8,7 @@ package Librarian;
 import com.jfoenix.controls.JFXButton;
 import com.jfoenix.controls.JFXTextField;
 import java.net.URL;
+import java.util.Random;
 import java.util.ResourceBundle;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
@@ -41,23 +42,28 @@ public class MembersController implements Initializable {
     private JFXButton save;
     @FXML
     private JFXButton cancel;
+    @FXML
+    private JFXTextField id;
 
     /**
      * Initializes the controller class.
      */
     @Override
     public void initialize(URL url, ResourceBundle rb) {
-        // TO
+        Random();
     }    
 
     @FXML
     private void handleSaveBtnAction(ActionEvent event) {
-        m1.add_member(firstname.getText(), middlename.getText(), lastname.getText(), dateofbirth.getText(), dateofmemberShip.getText(), address.getText(), contactnumber.getText(), emailaddress.getText());
+        m1.add_member(firstname.getText(), middlename.getText(), lastname.getText(), dateofbirth.getText(), dateofmemberShip.getText(), address.getText(), contactnumber.getText(), emailaddress.getText(),id.getText());
     }
 
     @FXML
     private void handleCancelBtnAction(ActionEvent event) {
         
     }
-    
+    public void Random(){
+        Random rd=new Random();
+        id.setText(""+rd.nextInt(1000+1));
+    }
 }
