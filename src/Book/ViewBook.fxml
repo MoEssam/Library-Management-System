@@ -1,22 +1,19 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import java.lang.*?>
-<?import javafx.scene.control.*?>
-<?import javafx.scene.layout.*?>
 <?import javafx.scene.control.TableColumn?>
 <?import javafx.scene.control.TableView?>
 <?import javafx.scene.layout.AnchorPane?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="407.0" prefWidth="651.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Book.ViewBookController">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="425.0" prefWidth="720.0" xmlns="http://javafx.com/javafx/8.0.141" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Book.ViewBookController">
    <children>
-      <TableView fx:id="book" layoutX="14.0" layoutY="43.0" prefHeight="219.0" prefWidth="587.0">
+      <TableView fx:id="book" layoutX="14.0" layoutY="43.0" prefHeight="407.0" prefWidth="651.0" tableMenuButtonVisible="true" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
         <columns>
-          <TableColumn fx:id="title" maxWidth="57.0" minWidth="-1.0" prefWidth="57.0" text="Title" />
-          <TableColumn fx:id="author" prefWidth="110.0" text="BookAuthor" />
-            <TableColumn fx:id="Subject" maxWidth="170.0" minWidth="-1.0" prefWidth="116.0" text="Subject Area" />
-            <TableColumn fx:id="id" minWidth="0.0" prefWidth="44.0" text="ID" />
-            <TableColumn fx:id="date" minWidth="0.0" prefWidth="79.0" text="Date" />
-            <TableColumn fx:id="number" prefWidth="180.0" text="Number of Copies" />
+          <TableColumn fx:id="title" maxWidth="117.0" minWidth="-1.0" prefWidth="117.0" text="Book Title" />
+          <TableColumn fx:id="author" prefWidth="133.0" text="Book Author" />
+            <TableColumn fx:id="Subject" maxWidth="170.0" minWidth="-1.0" prefWidth="111.0" text="Subject Area" />
+            <TableColumn fx:id="id" minWidth="0.0" prefWidth="115.0" text="ID" />
+            <TableColumn fx:id="date" minWidth="0.0" prefWidth="112.0" text="Date" />
+            <TableColumn fx:id="number" prefWidth="124.0" text="Number of Copies" />
         </columns>
       </TableView>
    </children>
