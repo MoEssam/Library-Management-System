@@ -23,6 +23,7 @@
 <?import javafx.scene.layout.StackPane?>
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
+<?import javafx.scene.image.*?>
 
 <StackPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="480.0" prefWidth="679.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Librarian.AdminController">
    <children>
@@ -51,7 +52,9 @@
          <right>
             <VBox prefHeight="455.0" prefWidth="148.0" BorderPane.alignment="CENTER">
                <children>
-                  <JFXButton fx:id="addmember" contentDisplay="TOP" onAction="#updatemember" prefHeight="150.0" prefWidth="150.0" style="-fx-background-color: cyan;" text="Add Member">
+
+                   <JFXButton fx:id="addmember" contentDisplay="TOP" onAction="#updatemember" prefHeight="150.0" prefWidth="150.0" style="-fx-background-color: cyan;" text="Add Member">
+
                      <VBox.margin>
                         <Insets top="10.0" />
                      </VBox.margin>
@@ -209,7 +212,7 @@
                   <content>
                     <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
                            <children>
-                              <JFXTextField fx:id="bookId" labelFloat="true" layoutX="106.0" layoutY="26.0" maxWidth="275.0" minWidth="274.0" prefHeight="31.0" prefWidth="274.0" promptText="Enter Book ID">
+                              <JFXTextField fx:id="member_id" labelFloat="true" layoutX="106.0" layoutY="26.0" maxWidth="275.0" minWidth="274.0" prefHeight="31.0" prefWidth="274.0" promptText="Enter Book ID">
                                  <font>
                                     <Font size="14.0" />
                                  </font>
@@ -270,6 +273,8 @@
                                  </font>
                               </JFXTextField>
                               <JFXButton layoutX="440.0" layoutY="161.0" onAction="#returnbook" text="Return" />
+                              <JFXButton layoutX="440.0" layoutY="210.0" onAction="#Renew" text="Renew" />
+                              <JFXTextField fx:id="renewcount" layoutX="366.0" layoutY="295.0" promptText="renew_count" />
                            </children></AnchorPane>
                   </content>
                 </Tab>

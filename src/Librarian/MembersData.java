@@ -4,6 +4,9 @@ import Database.dbConnection;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.SQLException;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
+import javafx.scene.control.Alert;
 
 /*import Login.Librarian;*/
 
@@ -110,5 +113,6 @@ public class MembersData  {
         }
         return null;
     }
+    
     
 }

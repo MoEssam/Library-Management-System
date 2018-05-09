@@ -40,7 +40,7 @@ public class AdminController implements Initializable {
     @FXML
     private JFXTextField entermemberid;
     @FXML
-    private JFXTextField bookId;
+    private JFXTextField member_id;
     @FXML
     private JFXButton addmember;
     @FXML
@@ -80,6 +80,8 @@ public class AdminController implements Initializable {
     
 
     Book b1=new Book();
+    @FXML
+    private JFXTextField renewcount;
 
 
 
@@ -221,7 +223,7 @@ public class AdminController implements Initializable {
     @FXML
     private void returnbook(ActionEvent event) throws SQLException {
         
-        String get_id=bookId.getText();
+        String get_id=member_id.getText();
         String sql="SELECT * FROM issue where memberid = '"+get_id+"'"  ;
         pr=conn.prepareStatement(sql);
         rs=pr.executeQuery();
@@ -239,4 +241,18 @@ public class AdminController implements Initializable {
           b1.Return(txt3.getText(), txt4.getText(), txt5.getText(), txt6.getText(), txt1.getText(), txt2.getText());
           b1.removeBook(txt2.getText());
 }
+
+    @FXML
+    private void Renew(ActionEvent event) throws SQLException {
+        
+        String get_id=member_id.getText();
+        String sql="UPDATE  issue set renew = renew+1 WHERE memberid = '"+get_id+"'"  ;
+        pr=conn.prepareStatement(sql);
+        rs=pr.executeQuery();
+         if(rs.next()){
+            rs.close();
+            pr.close();
+        
+    }
+    }
 }
